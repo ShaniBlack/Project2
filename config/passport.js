@@ -23,8 +23,12 @@ passport.use(
             message: 'Incorrect email.'
           })
         } else if (!dbUser.validPassword(password)) {
+<<<<<<< HEAD
         // If there is a user with the given email, but the password the user gives us is incorrect
 
+=======
+          // If there is a user with the given email, but the password the user gives us is incorrect
+>>>>>>> 250d8332582b5c36d4443429c426503137bd8bba
           return done(null, false, {
             message: 'Incorrect password.'
           })
