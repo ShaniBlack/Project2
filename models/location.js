@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
     Location.associate = function(models) {
       // Associating Location with Posts
       // When an Location is deleted, also delete any associated Posts
-      Location.hasMany(models.Post.Traveler, {
+      Location.hasMany(models.Traveler, {
         onDelete: "cascade"
       });
     };

@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
     Journal.associate = function(models) {
       // We're saying that a Journal should belong to an Traveler
       // A Journal can't be created without an Traveler due to the foreign key constraint
-      Journal.belongsTo(models.Traveler.Post, {
+      Journal.belongsTo(models.Traveler, {
         foreignKey: {
           allowNull: false
         }
