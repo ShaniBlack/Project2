@@ -40,8 +40,8 @@ module.exports = function (app) {
   // });
 
   // cms route loads cms.html
-  app.get('/post', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/post.html'))
+  app.get('/cms', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/cms.html'))
   })
 
   // blog route loads blog.html
@@ -50,8 +50,8 @@ module.exports = function (app) {
   })
 
   // s route loads-manager.html
-  app.get('/travelers-travel', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/travelers-travel.html'))
+  app.get('/travelers', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/traveler-manager.html'))
   })
 
   app.get('*', function (req, res) {
