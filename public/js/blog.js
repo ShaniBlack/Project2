@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  // blogContainer holds all of our posts
+  // blogContainer holds all of our posts traveler
   const blogContainer = $('.blog-container')
   const postCategorySelect = $('#category')
   // Click events for the edit and delete buttons
@@ -8,28 +8,28 @@ $(document).ready(function () {
   // Variable to hold our posts
   let posts
 
-  // The code below handles the case where we want to get blog posts for a specific author
-  // Looks for a query param in the url for author_id
+  // The code below handles the case where we want to get blog posts for a specific traveler
+  // Looks for a query param in the url for traveler_id
   const url = window.location.search
-  let authorId
-  if (url.indexOf('?author_id=') !== -1) {
-    authorId = url.split('=')[1]
-    getPosts(authorId)
+  let travelerId
+  if (url.indexOf('?traveler_id=') !== -1) {
+    travelerId = url.split('=')[1]
+    getPosts(travelerId)
   } else {
     getPosts()
   }
 
   // This function grabs posts from the database and updates the view
-  function getPosts (author) {
-    authorId = author || ''
-    if (authorId) {
-      authorId = '/?author_id=' + authorId
+  function getPosts (traveler) {
+    travelerId = traveler || ''
+    if (travelerId) {
+      travelerId = '/?traveler_id=' + travelerId
     }
-    $.get('/api/posts' + authorId, function (data) {
+    $.get('/api/posts' + travelerId, function (data) {
       console.log('Posts', data)
       posts = data
       if (!posts || !posts.length) {
-        displayEmpty(author)
+        displayEmpty(traveler)
       } else {
         initializeRows()
       }
@@ -72,9 +72,9 @@ $(document).ready(function () {
     editBtn.addClass('edit btn btn-info')
     const newPostTitle = $('<h2>')
     const newPostDate = $('<small>')
-    const newPostAuthor = $('<h5>')
-    newPostAuthor.text('Written by: ' + post.Author.name)
-    newPostAuthor.css({
+    const newPosttraveler = $('<h5>')
+    newPosttraveler.text('Written by: ' + post.traveler.name)
+    newPosttraveler.css({
       float: 'right',
       color: 'blue',
       'margin-top':
@@ -90,7 +90,7 @@ $(document).ready(function () {
     newPostCardHeading.append(deleteBtn)
     newPostCardHeading.append(editBtn)
     newPostCardHeading.append(newPostTitle)
-    newPostCardHeading.append(newPostAuthor)
+    newPostCardHeading.append(newPosttraveler)
     newPostCardBody.append(newPostBody)
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
@@ -121,7 +121,7 @@ $(document).ready(function () {
     const query = window.location.search
     let partial = ''
     if (id) {
-      partial = ' for Author #' + id
+      partial = ' for traveler #' + id
     }
     blogContainer.empty()
     const messageH2 = $('<h2>')

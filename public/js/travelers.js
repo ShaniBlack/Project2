@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  // Getting references to the name input and traveler container, as well as the table body
+  // Getting references to the name input and traveler container, as well as the table body author
   const nameInput = $('#traveler-name')
   const travelerList = $('tbody')
   const travelerContainer = $('.traveler-container')
@@ -43,7 +43,7 @@ $(document).ready(function () {
       newTr.append('<td>0</td>')
     }
     newTr.append("<td><a href='/blog?traveler_id=" + travelerData.id + "'>Go to Posts</a></td>")
-    newTr.append("<td><a href='/cms?traveler_id=" + travelerData.id + "'>Create a Post</a></td>")
+    newTr.append("<td><a href='/post?traveler_id=" + travelerData.id + "'>Create a Post</a></td>")
     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-traveler'>Delete Traveler</a></td>")
     return newTr
   }

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  // Getting jQuery references to the post body, title, form, and author select
+  // Getting jQuery references to the post body, title, form, and traveler select author
   const bodyInput = $('#body')
   const titleInput = $('#title')
   const cmsForm = $('#cms')
@@ -19,18 +19,18 @@ $(document).ready(function () {
     postId = url.split('=')[1]
     getPostData(postId, 'post')
   } else if (url.indexOf('?traveler_id=') !== -1) {
-  // Otherwise if we have an author_id in our url, preset the author select box to be our Author
+  // Otherwise if we have an traveler_id in our url, preset the traveler select box to be our traveler
 
     travelerId = url.split('=')[1]
   }
 
-  // Getting the authors, and their posts
+  // Getting the travelers, and their posts
   getTravelers()
 
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit (event) {
     event.preventDefault()
-    // Wont submit the post if we are missing a body, title, or author
+    // Wont submit the post if we are missing a body, title, or traveler
     if (!titleInput.val().trim() || !bodyInput.val().trim() || !travelerSelect.val()) {
       return
     }
@@ -62,7 +62,7 @@ $(document).ready(function () {
     })
   }
 
-  // Gets post data for the current post if we're editing, or if we're adding to an author's existing posts
+  // Gets post data for the current post if we're editing, or if we're adding to an traveler's existing posts
   function getPostData (id, type) {
     let queryUrl
     switch (type) {
@@ -89,12 +89,12 @@ $(document).ready(function () {
     })
   }
 
-  // A function to get Authors and then render our list of Authors
+  // A function to get travelers and then render our list of travelers
   function getTravelers () {
     $.get('/api/travlers', renderTravelerList)
   }
-  // Function to either render a list of authors, or if there are none, direct the user to the page
-  // to create an author first
+  // Function to either render a list of travelers, or if there are none, direct the user to the page
+  // to create an traveler first
   function renderTravelerList (data) {
     if (!data.length) {
       window.location.href = '/travelers'
@@ -111,11 +111,11 @@ $(document).ready(function () {
     travelerSelect.val(travelerId)
   }
 
-  // Creates the author options in the dropdown
-  function createTravelerRow (author) {
+  // Creates the traveler options in the dropdown
+  function createTravelerRow (traveler) {
     const listOption = $('<option>')
-    listOption.attr('value', author.id)
-    listOption.text(author.name)
+    listOption.attr('value', traveler.id)
+    listOption.text(traveler.name)
     return listOption
   }
 

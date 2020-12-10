@@ -49,7 +49,7 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, '../public/blog.html'))
   })
 
-  // authors route loads author-manager.html
+  // s route loads-manager.html
   app.get('/travelers-travel', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/travelers-travel.html'))
   })
