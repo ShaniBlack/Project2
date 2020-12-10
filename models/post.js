@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
   Post.associate = function(models) {
     // We're saying that a Post should belong to an Traveler
     // A Post can't be created without an Traveler due to the foreign key constraint
-    Post.belongsTo(models.Traveler, {
+    Post.belongsTo(models.Traveler.Location, {
       foreignKey: {
         allowNull: false
       }
