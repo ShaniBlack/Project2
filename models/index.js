@@ -25,11 +25,19 @@ fs
         db[model.name] = model;
     });
 
+<<<<<<< HEAD
 Object.keys(db).forEach(modelName => {
     if (db[modelName].associate) {
         db[modelName].associate(db);
     }
 });
+=======
+Object.keys(db).forEach((modelName) => {
+    if (db[modelName].associate) {
+      db[modelName].associate(db);
+    }
+  });
+>>>>>>> f30195c081615bde6d154a55d653380d3836b1b9
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
