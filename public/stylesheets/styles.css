@@ -10,3 +10,20 @@
     background-image: url("https://images.unsplash.com/photo-1607600578748-2a907bd6b632?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60");
   }
 }
+
+.welcome-img {
+  background-image: url("https://images.unsplash.com/photo-1485199433301-8b7102e86995?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYXZlbCUyMGNvdXBsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  height: 100%;
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+}
+
+.welcome-little {
+  font-family: "Sofia", sans-serif;
+  font-size: 75px;
+}
+
+.welcome-book {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 60px;
+}
