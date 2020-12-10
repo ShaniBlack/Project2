@@ -11,7 +11,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated')
 // Routes
 // =============================================================
 module.exports = function (app) {
-  app.get('/signup', (req, res) => {
+  app.get('/', (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect('/members')
@@ -54,7 +54,7 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, '../public/traveler-manager.html'))
   })
 
-  app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/welcome.html'))
-  })
+  // app.get('*', function (req, res) {
+  //   res.sendFile(path.join(__dirname, '../public/welcome.html'))
+  // })
 }
