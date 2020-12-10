@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // *********************************************************************************
 // html-routes.js - this file offers a set of routes for sending users to the various html pages
 // *********************************************************************************
@@ -11,58 +10,47 @@ const isAuthenticated = require('../config/middleware/isAuthenticated')
 
 // Routes
 // =============================================================
-=======
-// Requiring path to so we can use relative routes to our HTML files
-const path = require('path')
+module.exports = function(app) {
+    app.get('/', (req, res) => {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect('/members')
+        }
+        res.sendFile(path.join(__dirname, '../public/signup.html'))
+    })
 
-// Requiring our custom middleware for checking if a user is logged in
-const isAuthenticated = require('../config/middleware/isAuthenticated')
+    app.get('/login', (req, res) => {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect('/members')
+        }
+        res.sendFile(path.join(__dirname, '../public/login.html'))
+    })
 
->>>>>>> 250d8332582b5c36d4443429c426503137bd8bba
-module.exports = function (app) {
-  app.get('/', (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect('/members')
-    }
-    res.sendFile(path.join(__dirname, '../public/signup.html'))
-  })
+    // Here we've add our isAuthenticated middleware to this route.
+    // If a user who is not logged in tries to access this route they will be redirected to the signup page
+    app.get('/members', isAuthenticated, (req, res) => {
+            res.sendFile(path.join(__dirname, '../public/members.html'))
+        })
+        // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  app.get('/login', (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect('/members')
-    }
-    res.sendFile(path.join(__dirname, '../public/login.html'))
-  })
+    // index route loads view.html
+    // app.get("/journal", function(req, res) {
+    //   res.sendFile(path.join(__dirname, "../public/journal.html"));
+    // });
 
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get('/members', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/members.html'))
-  })
-<<<<<<< HEAD
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+    // cms route loads cms.html
+    app.get('/post', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/post.html'))
+    })
 
-  // index route loads view.html
-  // app.get("/journal", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/journal.html"));
-  // });
+    // blog route loads blog.html
+    app.get('/blog', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/blog.html'))
+    })
 
-  // cms route loads cms.html
-  app.get('/post', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/post.html'))
-  })
-
-  // blog route loads blog.html
-  app.get('/blog', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/blog.html'))
-  })
-
-  // s route loads-manager.html
-  app.get('/travelers-travel', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/travelers-travel.html'))
-  })
-=======
->>>>>>> 250d8332582b5c36d4443429c426503137bd8bba
+    // s route loads-manager.html
+    app.get('/travelers-travel', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/travelers-travel.html'))
+    })
 }
