@@ -40,8 +40,8 @@ module.exports = function (app) {
   // });
 
   // cms route loads cms.html
-  app.get('/post', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/post.html'))
+  app.get('/cms', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/cms.html'))
   })
 
   // blog route loads blog.html
