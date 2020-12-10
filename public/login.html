@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+    ></script>
+    <link href="./stylesheets/styles.css" rel="stylesheet" />
+    <title>Little TravelBook Login</title>
+  </head>
 
-<head>
-    <style>
+  <body>
+    <section class="hero is-fullheight has-bg-img">
+      <div class="hero-body">
+          <div class="container has-text-centered">
+              <div class="column is-4 is-offset-4">
+                  <h3 class="title has-text-black">Welcome Back!</h3>
+                  <hr class="login-hr">
+                  <p class="subtitle has-text-black">Please login to your
+                    <br>
+                    Little TravelBook
+                  </p>
+                      <form class="login">
+                          <div class="field">
+                              <div class="control">
+                                  <input class="input is-rounded is-large" id="email-input" type="email" placeholder="Your Email" autofocus="">
+                              </div>
+                          </div>
 
-    </style>
-    <title>Passport Authentication</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-    <link href="./stylesheets/styles.css" rel="stylesheet">
-</head>
-
-<body style="background-image: url('amsterdam_1-6.jpeg'); background-color: rgba(255,255,255,0.6);
-background-blend-mode: lighten;">
-
-
-    <img scr="amsterdam_1-6.jpeg" ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-right">
-                <h2>Welcome Back</h2>
-                <h3>Sign in to continue to your <br>littleTravelBook&reg;</h3>
-                <form class="login">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="email-input" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-input" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-default">Sign In</button>
-                </form>
-                <br />
-                <p><a href="/">Sign Up Now</a></p>
-            </div>
-        </div>
-    </div>
+                          <div class="field">
+                              <div class="control">
+                                  <input class="input is-rounded is-large" id="password-input" type="password" placeholder="Your Password">
+                              </div>
+                          </div>
+                          <button class="button is-rounded is-success is-info is-medium is-half">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                      </form>
+                  </div>
+                  <p class="has-text-grey">
+                      <a href="/signup">Sign Up</a> &nbsp;·&nbsp;
+                      <!-- <a href="../">Forgot Password</a> &nbsp;·&nbsp; -->
+                      <a href="https://google.com"target="_blank">Need Help?</a>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <script async type="text/javascript" src="../js/bulma.js"></script>
+</body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
-
-</body>
-
+  </body>
 </html>

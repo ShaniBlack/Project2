@@ -11,7 +11,7 @@ const isAuthenticated = require('../config/middleware/isAuthenticated')
 // Routes
 // =============================================================
 module.exports = function (app) {
-  app.get('/', (req, res) => {
+  app.get('/signup', (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect('/members')
@@ -40,8 +40,8 @@ module.exports = function (app) {
   // });
 
   // cms route loads cms.html
-  app.get('/post', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/post.html'))
+  app.get('/cms', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/cms.html'))
   })
 
   // blog route loads blog.html
@@ -50,7 +50,11 @@ module.exports = function (app) {
   })
 
   // s route loads-manager.html
-  app.get('/travelers-travel', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/travelers-travel.html'))
+  app.get('/travelers', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/traveler-manager.html'))
+  })
+
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/welcome.html'))
   })
 }
