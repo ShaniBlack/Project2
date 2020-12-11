@@ -1,7 +1,9 @@
-body {
-  background-image: url("https://images.unsplash.com/photo-1597401923609-757b6f11e8ce?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
-  height: 100%;
-  background-position: center center;
+html { 
+  background: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-color: rgba(255,255,255,0.6);
   background-blend-mode: lighten;
 }
@@ -10,14 +12,6 @@ body {
   .has-bg-img {
     background-image: url("https://images.unsplash.com/photo-1597401923609-757b6f11e8ce?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
   }
-} */
-
-/* .welcome-img {
-  background-image: url("https://images.unsplash.com/photo-1597401923609-757b6f11e8ce?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
-  height: 100%;
-  background-position: center center;
-  background-color: rgba(255,255,255,0.6);
-  background-blend-mode: lighten;
 } */
 
 .welcome-little {
@@ -44,3 +38,9 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-size: 30px
 }
+
+.card {
+  padding: 10px;
+  margin: 10px;
+}
+

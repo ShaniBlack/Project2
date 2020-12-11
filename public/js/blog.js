@@ -75,7 +75,7 @@ $(document).ready(function () {
     })
 
     const newPostCardBody = $('<div>')
-    newPostCardBody.addClass('card-body')
+    newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
     newPostTitle.text(post.title + ' ')
     newPostBody.text(post.body)
