@@ -1,7 +1,10 @@
 $(document).ready(function () {
   // blogContainer holds all of our posts Traveler
   const blogContainer = $('.blog-container')
-  const postCategorySelect = $('#category')
+  // const postCategorySelect = $('#category')
+  // Click events for the edit and delete buttons
+  // $(document).on('click', 'button.delete', handlePostDelete)
+  // $(document).on('click', 'button.edit', handlePostEdit)
   // Variable to hold our posts
   let posts
 
@@ -33,6 +36,17 @@ $(document).ready(function () {
     })
   }
 
+  // This function does an API call to delete posts
+  // function deletePost (id) {
+  //   $.ajax({
+  //     method: 'DELETE',
+  //     url: '/api/posts/' + id
+  //   })
+  //     .then(function () {
+  //       getPosts(postCategorySelect.val())
+  //     })
+  // }
+
   // InitializeRows handles appending all of our constructed post HTML inside blogContainer
   function initializeRows () {
     blogContainer.empty()
@@ -51,6 +65,12 @@ $(document).ready(function () {
     newPostCard.addClass('card')
     const newPostCardHeading = $('<div>')
     newPostCardHeading.addClass('card-header')
+    // const deleteBtn = $('<button>')
+    // deleteBtn.text('x')
+    // deleteBtn.addClass('delete btn btn-danger')
+    // const editBtn = $('<button>')
+    // editBtn.text('EDIT')
+    // editBtn.addClass('edit btn btn-info')
     const newPostTitle = $('<h2>')
     const newPostDate = $('<small>')
     const newPostTraveler = $('<h5>')
@@ -89,26 +109,25 @@ $(document).ready(function () {
   // }
 
   // This function figures out which post we want to edit and takes it to the appropriate url
-  function handlePostEdit () {
-    const currentPost = $(this)
-      .parent()
-      .parent()
-      .data('post')
-    window.location.href = '/cms?post_id=' + currentPost.id
-  }
+  // function handlePostEdit () {
+  //   const currentPost = $(this)
+  //     .parent()
+  //     .parent()
+  //     .data('post')
+  //   window.location.href = '/cms?post_id=' + currentPost.id
+  // }
 
   // This function displays a message when there are no posts author
-  function displayEmpty (id) {
+  function displayEmpty (post) {
     const query = window.location.search
     // ßlet partial = ''
     if (id) {
-      // partial = ' for Traveler #' + id
+      // partial = ' for User #' + name
     }
     blogContainer.empty()
     const messageH2 = $('<h2>')
     messageH2.css({ 'text-align': 'center', 'margin-top': '50px' })
-    messageH2.html("What are you waiting for, start telling everyone about your travels in  <a href='/cms" + query +
-    "'>your littleTravelBook</a>.")
+    // messageH2.html(`Why are you waiting ${post.User.name} , start telling everyone about your travels in  <a href='/cms${query}>your littleTravelBook</a>.`)
     blogContainer.append(messageH2)
   }
 })
