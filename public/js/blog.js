@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // blogContainer holds all of our posts Traveler
   const blogContainer = $('.blog-container')
-  const postCategorySelect = $('#category')
+  // const postCategorySelect = $('#category')
   // Variable to hold our posts
   let posts
 
@@ -62,7 +62,7 @@ $(document).ready(function () {
     const newPostCardHeading = $('<div>')
     newPostCardHeading.addClass('card-header')
     const newPostTitle = $('<h5>')
-    const newPostDate = $('<small>')
+    // const newPostDate = $('<small>')
     const newPostTraveler = $('<h6>')
     const newPostCardFooting = $('<div>')
     newPostCardFooting.addClass('card-Footer')
@@ -111,13 +111,13 @@ $(document).ready(function () {
   // }
 
   // This function figures out which post we want to edit and takes it to the appropriate url
-  function handlePostEdit () {
-    const currentPost = $(this)
-      .parent()
-      .parent()
-      .data('post')
-    window.location.href = '/cms?post_id=' + currentPost.id
-  }
+  // function handlePostEdit () {
+  //   const currentPost = $(this)
+  //     .parent()
+  //     .parent()
+  //     .data('post')
+  //   window.location.href = '/cms?post_id=' + currentPost.id
+  // }
 
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
