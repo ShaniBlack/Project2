@@ -70,8 +70,7 @@ $(document).ready(function () {
     newPostTraveler.css({
       float: 'right',
       color: 'blue',
-      'margin-top':
-      '-10px'
+      'margin-top': '-10px'
     })
 
     const newPostCardBody = $('<div>')
@@ -90,8 +89,7 @@ $(document).ready(function () {
     newPostCardFooting.css({
       float: 'right',
       color: 'blue',
-      'margin-top':
-      '-10px'
+      'margin-top': '-10px'
     })
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
@@ -128,9 +126,12 @@ $(document).ready(function () {
     }
     blogContainer.empty()
     const messageH2 = $('<h2>')
-    messageH2.css({ 'text-align': 'center', 'margin-top': '50px' })
+    messageH2.css({
+      'text-align': 'center',
+      'margin-top': '50px'
+    })
     messageH2.html("What are you waiting for, start telling everyone about your travels in  <a href='/cms" + query +
-    "'>your littleTravelBook</a>.")
+            "'>your littleTravelBook</a>.")
     blogContainer.append(messageH2)
   }
 })
