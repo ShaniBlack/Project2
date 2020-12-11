@@ -48,34 +48,56 @@ $(document).ready(function () {
   function createNewRow (post) {
     const formattedDate = new Date(post.createdAt).toLocaleDateString()
     const newPostCard = $('<div>')
+    newPostCard.css({
+
+      width: '200px',
+      height: '100px',
+      overflow: 'scroll'
+
+    })
     newPostCard.addClass('card')
+    newPostCard.css({
+      margin: '10px'
+    })
     const newPostCardHeading = $('<div>')
     newPostCardHeading.addClass('card-header')
-    const newPostTitle = $('<h2>')
+    const newPostTitle = $('<h5>')
     const newPostDate = $('<small>')
-    const newPostTraveler = $('<h5>')
-    newPostTraveler.text(`Written by:  ${post.Traveler.name}   ` + ` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
+    const newPostTraveler = $('<h6>')
+    const newPostCardFooting = $('<div>')
+    newPostCardFooting.addClass('card-Footer')
+    newPostTraveler.text(` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
     newPostTraveler.css({
       float: 'right',
       color: 'blue',
       'margin-top':
       '-10px'
     })
+
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-body')
     const newPostBody = $('<p>')
     newPostTitle.text(post.title + ' ')
     newPostBody.text(post.body)
-    newPostDate.text(formattedDate)
-    newPostTitle.append(newPostDate)
+    // newPostDate.text(formattedDate)
+    // newPostTitle.append(newPostDate)
     // newPostCardHeading.append(deleteBtn)
     // newPostCardHeading.append(editBtn)
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)
+    newPostCardFooting.append(` Written by:  ${post.Traveler.name} ` + formattedDate)
+    newPostCardFooting.css({
+      float: 'right',
+      color: 'blue',
+      'margin-top':
+      '-10px'
+    })
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
+    newPostCard.append(newPostCardFooting)
     newPostCard.data('post', post)
+
     return newPostCard
   }
 
