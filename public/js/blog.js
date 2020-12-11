@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // blogContainer holds all of our posts Traveler
   const blogContainer = $('.blog-container')
-  const postCategorySelect = $('#category')
+  // const postCategorySelect = $('#category')
   // Variable to hold our posts
   let posts
 
@@ -55,7 +55,7 @@ $(document).ready(function () {
     const newPostDate = $('<small>')
     const newPostTraveler = $('<h5>')
     newPostTraveler.text(`Written by:  ${post.Traveler.name}   ` + ` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
-    
+
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
