@@ -1,12 +1,46 @@
-.has-bg-img {
-  background-image: url("../assets/img/amsterdam_1-6.jpeg");
+body {
+  background-image: url("https://images.unsplash.com/photo-1597401923609-757b6f11e8ce?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
   height: 100%;
+  background-position: center center;
   background-color: rgba(255,255,255,0.6);
   background-blend-mode: lighten;
 }
 
-@media screen and (min-width: 768px){
+/* @media screen and (min-width: 768px){
   .has-bg-img {
-    background-image: url("https://images.unsplash.com/photo-1607600578748-2a907bd6b632?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60");
+    background-image: url("https://images.unsplash.com/photo-1597401923609-757b6f11e8ce?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
   }
+} */
+
+/* .welcome-img {
+  background-image: url("https://images.unsplash.com/photo-1597401923609-757b6f11e8ce?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
+  height: 100%;
+  background-position: center center;
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+} */
+
+.welcome-little {
+  font-family: "Sofia", sans-serif;
+  font-size: 75px;
+}
+
+.welcome-book {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 60px;
+}
+
+.login-welcome {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 40px;
+}
+
+#login-little {
+  font-family: "Sofia", sans-serif;
+  font-size: 50px;
+}
+
+#small-login {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px
 }
