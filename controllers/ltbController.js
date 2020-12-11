@@ -1,14 +1,19 @@
 var express = require("express");
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
-var cat = require("../models/cat.js");
+// Import the models to use its database functions.
+var index = require("../models/index.js");
+var journal = require("../models/journal.js");
+var location = require("../models/location.js");
+var post = require("../models/post.js");
+var traveler = require("../models/traveler.js");
+var user = require("../models/user.js");
 
-app.get('/', function(req, res) {
-    res.render('main', {
-        layout: '../login'
-    });
-});
+// router.get('/', function(req, res) {
+//     res.render('main', {
+//         layout: '../login'
+//     });
+// });
 // Create all our routes and set up logic within those routes where required.
 // router.get("/", function(req, res) {
 //     cat.all(function(data) {

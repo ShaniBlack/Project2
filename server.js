@@ -3,13 +3,14 @@ const express = require('express')
 const session = require('express-session')
     // Requiring passport as we've configured it
 const passport = require('./config/passport')
+const path = require('path')
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080
 const db = require('./models')
 
 // import express - handlebars
-var exphbs = require('express-handlebars');
+
 
 // Creating express app and configuring middleware needed for authentication
 const app = express()
@@ -20,14 +21,28 @@ app.use(express.urlencoded({
 app.use(express.json())
 app.use(express.static('public'))
 
+////-----------HANDLEBARS---------//////////////////////////////////////////////////////////////
 // express-handlebars engine setup
+var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));
-app.set('view engine', 'handlebars');
+app.set("view engine", "handlebars");
 
 // We need to use sessions to keep track of our user's login status
+// Import routes and give the server access to them.
+var routes = require("./controllers/ltbController.js");
+
+app.use(routes);
+
+app.get('/', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('login');
+});
+// app.set('views', path.join(__dirname, 'views'));
+////------^^^^^HANDLEBARS^^^^^------//////////////////////////////
+
 app.use(
     session({
         secret: 'keyboard cat',
@@ -38,20 +53,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.set("view engine", "handlebars");
-
-// Import routes and give the server access to them.
-var routes = require("./controllers/ltbController.js");
-
-app.use(routes);
-
-app.get('/', function(req, res) {
-    res.render('main', {
-        layout: '../login'
-    });
-});
-
-// Requiring our routes
+// // Requiring our routes
 require('./routes/html-routes.js')(app)
 require('./routes/api-routes.js')(app)
 require('./routes/post-api-routes.js')(app)
