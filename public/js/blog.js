@@ -2,9 +2,6 @@ $(document).ready(function () {
   // blogContainer holds all of our posts Traveler
   const blogContainer = $('.blog-container')
   const postCategorySelect = $('#category')
-  // Click events for the edit and delete buttons
-  $(document).on('click', 'button.delete', handlePostDelete)
-  $(document).on('click', 'button.edit', handlePostEdit)
   // Variable to hold our posts
   let posts
 
@@ -36,17 +33,6 @@ $(document).ready(function () {
     })
   }
 
-  // This function does an API call to delete posts
-  function deletePost (id) {
-    $.ajax({
-      method: 'DELETE',
-      url: '/api/posts/' + id
-    })
-      .then(function () {
-        getPosts(postCategorySelect.val())
-      })
-  }
-
   // InitializeRows handles appending all of our constructed post HTML inside blogContainer
   function initializeRows () {
     blogContainer.empty()
@@ -65,12 +51,6 @@ $(document).ready(function () {
     newPostCard.addClass('card')
     const newPostCardHeading = $('<div>')
     newPostCardHeading.addClass('card-header')
-    const deleteBtn = $('<button>')
-    deleteBtn.text('x')
-    deleteBtn.addClass('delete btn btn-danger')
-    const editBtn = $('<button>')
-    editBtn.text('EDIT')
-    editBtn.addClass('edit btn btn-info')
     const newPostTitle = $('<h2>')
     const newPostDate = $('<small>')
     const newPostTraveler = $('<h5>')
@@ -88,8 +68,8 @@ $(document).ready(function () {
     newPostBody.text(post.body)
     newPostDate.text(formattedDate)
     newPostTitle.append(newPostDate)
-    newPostCardHeading.append(deleteBtn)
-    newPostCardHeading.append(editBtn)
+    // newPostCardHeading.append(deleteBtn)
+    // newPostCardHeading.append(editBtn)
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)
@@ -100,13 +80,13 @@ $(document).ready(function () {
   }
 
   // This function figures out which post we want to delete and then calls deletePost
-  function handlePostDelete () {
-    const currentPost = $(this)
-      .parent()
-      .parent()
-      .data('post')
-    deletePost(currentPost.id)
-  }
+  // function handlePostDelete () {
+  //   const currentPost = $(this)
+  //     .parent()
+  //     .parent()
+  //     .data('post')
+  //   deletePost(currentPost.id)
+  // }
 
   // This function figures out which post we want to edit and takes it to the appropriate url
   function handlePostEdit () {

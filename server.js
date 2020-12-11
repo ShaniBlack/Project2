@@ -8,7 +8,7 @@ const passport = require('./config/passport')
 const PORT = process.env.PORT || 8080
 const db = require('./models')
 
-express-handlebars
+// import express - handlebars
 var exphbs = require('express-handlebars');
 
 // Creating express app and configuring middleware needed for authentication
@@ -21,8 +21,12 @@ app.use(express.json())
 app.use(express.static('public'))
 
 // express-handlebars engine setup
-app.engine('handlebars', exphbs());
+
+app.engine("handlebars", exphbs({
+    defaultLayout: "main"
+}));
 app.set('view engine', 'handlebars');
+
 // We need to use sessions to keep track of our user's login status
 app.use(
     session({
@@ -34,8 +38,17 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.set("view engine", "handlebars");
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/ltbController.js");
+
+app.use(routes);
+
 app.get('/', function(req, res) {
-    res.render('home');
+    res.render('main', {
+        layout: '../login'
+    });
 });
 
 // Requiring our routes
