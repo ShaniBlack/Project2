@@ -21,21 +21,23 @@
   <section class = "section">
     <div class = "container">
        <!-- <nav class = "navbar"> -->
-             <div class="button navbar-burger is-active" data-target="navMenu">
+             <div class="button navbar-burger is-hidden-desktop" data-target="navbar-menu" aria-expanded="false">
+              <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">              <span aria-hidden="true"></span> -->
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
+                <!-- </a> -->
              </div>
           </div>
           <div class="navbar-menu is-active">
              <div class="navbar-end">
                 <a class="navbar-item" href="./members">
-                Home
+                  Home
                 </a>
                 <a class="navbar-item" href="./cms">
                   My Travel Journal
                 </a>
-                <a class="navbar-item" href="./traveler">
+                <a class="navbar-item" href="./travelers">
                   Travelers' Reviews
                 </a>
                 <a class="navbar-item" href="./cms">
@@ -46,21 +48,12 @@
        </nav>
     </div>
  </section>
- <!-- Below is bootstrap -->
-  <!-- <div class="container blog">
-    <div class="row">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/cms">My Reviews</a>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/travelers">Fellow Travlers</a>
+ <div class="container">
+    <div class="columns is-centered">
+      <div class="column blog-container is-half ">
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 blog-container">
-      </div>
-    </div>
-  </div> -->
+  </div>
   <!-- Custom Script -->
   <script async type="text/javascript" src="../js/bulma.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
