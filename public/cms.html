@@ -12,8 +12,8 @@
 	defer
 	src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
 	></script>
+	<link rel="stylesheet" href="bulma.css" />
 	<link href="./stylesheets/styles.css" rel="stylesheet" />
-
 	<title>CMS - Express</title>
   </head>
 
@@ -27,7 +27,7 @@
 	 </div>
 	 <div class="navbar-menu">
 		<div class="navbar-end">
-		   <a class="navbar-item" id="nav-home" href="./members">
+		   <a class="navbar-item is-family-sans-serif" id="nav-home" href="./members">
 			 Home
 		   </a>
 		   <a class="navbar-item nav-journal" href="./cms">
@@ -45,7 +45,7 @@
 </div>
 </section>
 
-	<div class="container">
+	<!-- <div class="container">
 		<div class="row top-30">
       <div class="col-md-2 col-sm-2">
         <a class="btn btn-default" href="/blog">Travel Post</a>
@@ -53,39 +53,68 @@
       <div class="col-md-2 col-sm-2">
         <a class="btn btn-default" href="/travelers">Fellow Travelers</a>
       </div>
-    </div>
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+    </div> -->
+		<div class="columns">
+			<div class="column is-offset-3 is-one-third">
 				<form id="cms">
-					<div class="form-group">
-						<label for="title">Country:</label>
-						<input placeholder="Country" type="text" class="form-control" id="title">
-						<br />
-						<label for="city">City:</label>
-						<input placeholder="City" type="text" class="form-control" id="city">
-						<br />
-						<label for="lodging">Lodging:</label>
-						<input placeholder="Lodging" type="text" class="form-control" id="lodging">
-						<br />
-						<label for="ratings">Ratings:</label>
-						<input placeholder="Foods or Places you Enjoyed Most" type="text" class="form-control" id="ratings">
-						<br />
-						<label for="title">Activities:</label>
-						<input placeholder="Favorite Activities on Trip" type="text" class="form-control" id="title">
-						<label for="body">Journal Entry:</label>
-						<textarea placeholder="Journal" class="form-control" rows="10" id="body"></textarea>
-						<div class="form-group">
-							<label for="category">Select Traveler:</label>
-							<select class="form-control" id="traveler">
-  						</select>
+					<div class="form-class">
+						<div class="field">
+							<div class="control">
+								<label class="title">Country:</label>
+								<input class="input is-rounded" id="title" placeholder="Country" type="text">
+							</div>
+
+								<!-- <br /> -->
+							<div class="control">
+								<label class="city">City:</label>
+								<input  class="input is-rounded" id="city" placeholder="City" type="text">
+							</div>
+
+								<!-- <br /> -->
+							<div class="control">
+								<label class="lodging">Lodging:</label>
+								<input class="input is-rounded" id="lodging" placeholder="Lodging" type="text">
+							</div>
+
+								<!-- <br /> -->
+							<div class="control">
+								<label class="ratings">Ratings:</label>
+								<input class="input is-rounded" id="ratings" placeholder="Foods or Places you Enjoyed Most" type="text">
+							</div>	
+
+								<br />
+							<div class="control">
+								<label class="title">Activities:</label>
+								<input class="input is-rounded" id="title" placeholder="Favorite Activities on Trip" type="text">
+							</div>
+
+							<div class="control">
+								<label class="body">Journal Entry:</label>
+								<textarea  class="textarea is-rounded is-half" placeholder="Journal" rows="10" id="body"></textarea>
+							</div>
+
+							<label class="category">Select Traveler: </label>
+							<div class="control has-icons-right">
+								<div class="dropdown is-active">
+									<div class="dropdown-trigger">
+									<select class="input is-rounded" id="traveler">
+										<span class="icon is-small is-right">
+											<i class="fas fa-angle-down" aria-hidden="true"></i>
+										  </span>
+								  	</select>
+								  	</div>
+								</div>
+							</div>
+						
+							<br />
+							</div>
+						<button class="button is-success is-rounded" type="submit">Submit</button>
 						</div>
-						<br />
-						<button type="submit" class="btn btn-success submit">Submit</button>
 					</div>
 				</form>
 			</div>
 		</div>
-	</div>
+
 	<!-- Custom Script -->
   <script async type="text/javascript" src="../js/bulma.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

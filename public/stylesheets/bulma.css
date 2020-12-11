@@ -1,0 +1,17 @@
+@import "../node_modules/bulma/css/bulma.css";
+
+#nav-home {
+    font-family: "Sofia";
+  }
+  
+  /* .nav-journal {
+    $family-sans-serif: "Ubuntu";
+  }
+  
+  .nav-reviews {
+    $family-sans-serif: "Ubuntu";
+  }
+  
+  .nav-write {
+    $family-sans-serif: "Ubuntu";
+  } */
