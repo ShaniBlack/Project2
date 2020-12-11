@@ -5,8 +5,9 @@
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "watch": "nodemon server.js",
-
-    "keywords": [],
+    "keywords": [
+        "handlebars-helper-css"
+    ],
     "author": "",
     "license": "ISC",
     "dependencies": {
@@ -32,8 +33,5 @@
         "handlebars-helper-css": "^0.1.0",
         "mocha": "^5.2.0",
         "prettier": "^1.13.7"
-    },
-    "keywords": [
-        "handlebars-helper-css"
-    ]
+    }
 }
