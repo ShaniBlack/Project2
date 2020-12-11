@@ -23,8 +23,12 @@ passport.use(
             message: 'Incorrect email.'
           })
         } else if (!dbUser.validPassword(password)) {
+<<<<<<< Updated upstream
         // If there is a user with the given email, but the password the user gives us is incorrect
 
+=======
+          // If there is a user with the given email, but the password the user gives us is incorrect
+>>>>>>> Stashed changes
           return done(null, false, {
             message: 'Incorrect password.'
           })

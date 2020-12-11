@@ -2,13 +2,23 @@
     "development": {
         "username": "root",
         "password": "",
+<<<<<<< Updated upstream
         "database": "travelbookDB",
         "host": "127.0.0.1",
+=======
+        "database": "passport_demo",
+        "host": "127.0.0.1",
+        "port": 3306,
+>>>>>>> Stashed changes
         "dialect": "mysql"
     },
     "test": {
         "username": "root",
+<<<<<<< Updated upstream
         "password": null,
+=======
+        "password": "",
+>>>>>>> Stashed changes
         "database": "database_test",
         "host": "127.0.0.1",
         "dialect": "mysql"
