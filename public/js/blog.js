@@ -55,21 +55,15 @@ $(document).ready(function () {
     const newPostDate = $('<small>')
     const newPostTraveler = $('<h5>')
     newPostTraveler.text(`Written by:  ${post.Traveler.name}   ` + ` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
-    newPostTraveler.css({
-      float: 'right',
-      color: 'blue',
-      'margin-top':
-      '-10px'
-    })
+    
     const newPostCardBody = $('<div>')
-    newPostCardBody.addClass('card-body')
+    newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
     newPostTitle.text(post.title + ' ')
     newPostBody.text(post.body)
     newPostDate.text(formattedDate)
     newPostTitle.append(newPostDate)
-    // newPostCardHeading.append(deleteBtn)
-    // newPostCardHeading.append(editBtn)
+
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)
@@ -87,15 +81,6 @@ $(document).ready(function () {
   //     .data('post')
   //   deletePost(currentPost.id)
   // }
-
-  // This function figures out which post we want to edit and takes it to the appropriate url
-  function handlePostEdit () {
-    const currentPost = $(this)
-      .parent()
-      .parent()
-      .data('post')
-    window.location.href = '/cms?post_id=' + currentPost.id
-  }
 
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
