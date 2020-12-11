@@ -2,33 +2,56 @@
 <html lang="en">
 
 <head>
-    <title>Passport Authentication</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-    <link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link href="./stylesheets/styles.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <title>Member Page</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/logout">Logout</a>
-                <a class="navbar-brand" href="/blog">Travel Ratings and Reviews</a>
-                <a class="navbar-brand" href="/travelers">Fellow Travelers</a>
-                <a class="navbar-brand" href="/cms">New Post</a>
-                <a class="navbar-brand" href="/traveler">Your Page</a>
-            </div>
-        </div>
-    </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+        <div class="button navbar-burger burger" data-target="navbar-menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </div>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" id="nav-home" href="./members">
+                Home
+            </a>
+            <a class="navbar-item nav-journal" href="./cms">
+                My Travel Journal
+            </a>
+            <a class="navbar-item nav-reviews" href="./travelers">
+                Travelers' Reviews
+            </a>
+            <a class="navbar-item nav-write" href="./cms">
+                Write Travel Review
+            </a>
+        </div>
+    </div>
+    </nav>
+    </div>
+    </section>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-6 is-offset-3">
                 <h2>Welcome <span class="member-name"></span></h2>
             </div>
         </div>
     </div>
 
+    <script async type="text/javascript" src="../js/bulma.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
 

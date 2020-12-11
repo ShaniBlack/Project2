@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <link href="./stylesheets/styles.css" rel="stylesheet" />
-    <script src="./bulma.js"></script>
-    <title>Search Posts</title>
+    <title>Search Other Blogs</title>
 </head>
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -16,72 +15,45 @@
             <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
         </a>
 
-
-        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-
-
-        <div class="navbar-menu  navbar-right" id="navMenu">
-
-            <div class="navbar-start">
-                <a class="navbar-item">
-          Home
-        </a>
-
-                <a class="navbar-item">
-          Documentation
-        </a>
-
-
-                <a class="navbar-link">
-          More
-        </a>
-
-
-
-            </div>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-            Log in
-          </a>
+        <body>
+            <!-- Bulma Navbar -->
+            <section class="section">
+                <div class="container">
+                    <div class="button navbar-burger burger" data-target="navbar-menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-    </div>
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" id="nav-home" href="./members">
+              Home
+            </a>
+                        <a class="navbar-item nav-journal" href="./cms">
+              My Travel Journal
+            </a>
+                        <a class="navbar-item nav-reviews" href="./travelers">
+              Travelers' Reviews
+            </a>
+                        <a class="navbar-item nav-write" href="./cms">
+              Write Travel Review
+            </a>
+                    </div>
+                </div>
 </nav>
-<div class="container blog">
-    <div class="row">
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-default" href="/cms">My Reviews</a>
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-default" href="/travelers">Fellow Travelers</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 blog-container">
-
-
+</div>
+</section>
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column blog-container is-half ">
         </div>
     </div>
 </div>
-
-<body>
-
-    <!-- Custom Script -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/blog.js"></script>
+<!-- Custom Script -->
+<script async type="text/javascript" src="../js/bulma.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/blog.js"></script>
 
 </body>
 
