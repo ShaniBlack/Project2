@@ -22,17 +22,17 @@
     <div class="navbar-menu">
         <div class="navbar-end">
             <a class="navbar-item is-family-sans-serif" id="nav-home" href="./members">
-				Home
-			</a>
+                Home
+            </a>
             <a class="navbar-item nav-journal" href="./cms">
-				My Travel Journal
-			</a>
+                My Travel Journal
+            </a>
             <a class="navbar-item nav-reviews" href="./travelers">
-				Travelers' Reviews
-			</a>
+                Travelers' Reviews
+            </a>
             <a class="navbar-item nav-write" href="./cms">
-				Write Travel Review
-			</a>
+                Write Travel Review
+            </a>
         </div>
     </div>
     </nav>
@@ -92,15 +92,22 @@
                             <div class="dropdown is-active">
                                 <div class="dropdown-trigger">
                                     <select class="input is-rounded" id="traveler">
-										<span class="icon is-small is-right">
-											<i class="fas fa-angle-down" aria-hidden="true"></i>
-										</span>
-									</select>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
                         <br />
+                        <h2>With <code>"express"</code> npm package</h2>
+                        <form action="/api/upload" enctype="multipart/form-data" method="post">
+                            <div>Text field title: <input type="text" name="title" /></div>
+                            <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div>
+                            <input type="submit" value="Upload" />
+                        </form>
+
                     </div>
                     <button class="button is-success is-rounded" type="submit">Submit</button>
                 </div>
