@@ -84,4 +84,5 @@ module.exports = function(app) {
     app.get('/traveler-manager', (req, res) => {
         res.render('traveler-manager');
     });
+
 }

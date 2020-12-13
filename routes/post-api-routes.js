@@ -52,10 +52,13 @@ module.exports = function(app) {
         const form = formidable({
             multiples: true
         });
-
         form.parse(req, (err, fields, files) => {
+            console.log("fields:" + fields.title)
+            console.log(JSON.stringify(files.filetoupload, null, '\t'))
+
             const oldpath = files.filetoupload.path
-            const newpath = 'assets/file_uploads' + files.filetoupload.name
+            const newpath = 'assets/file_uploads/' + files.filetoupload.name
+            console.log(newpath)
             fs.rename(oldpath, newpath, function(err) {
                 if (err) throw err;
             });
@@ -63,7 +66,7 @@ module.exports = function(app) {
                 next(err);
                 return;
             }
-            res.write('File uploaded and moved!');
+            console.log('File uploaded and moved!');
             res.json({
                 fields,
                 files
