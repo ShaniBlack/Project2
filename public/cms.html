@@ -99,20 +99,69 @@
                                 </div>
                             </div>
                         </div>
-
-                        <br />
-                        <h2>With <code>"express"</code> npm package</h2>
-                        <form action="/api/upload" enctype="multipart/form-data" method="post">
-                            <div>Text field title: <input type="text" name="title" /></div>
-                            <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div>
-                            <input type="submit" value="Upload" />
-                        </form>
-
                     </div>
                     <button class="button is-success is-rounded" type="submit">Submit</button>
                 </div>
+            </form>
+            <br>
+            <form action="/api/upload" enctype="multipart/form-data" method="post">
+                <div class="field">
+                    <label class="label">Upload an Image</label>
+
+                    <!-- <div class="control">
+                                        <input type="file" name="someExpressFiles" multiple="multiple" />
+                                        <p class="help is-success">This username is available</p>
+                                        <input type="submit" value="Upload" />
+                                    </div> -->
+                    <div class="file">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="someExpressFiles" multiple="multiple">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Choose a file…
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Title for Your Image" name="title">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-image"></i>
+                        </span>
+                        <!-- <span class="icon is-small is-right">
+                                            <i class="fas fa-check"></i>
+                                        </span> -->
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <p class="control">
+                        <a class="button is-primary" value="Upload">
+                            Upload
+                        </a>
+                    </p>
+                    <p class="control">
+                        <a class="button is-light" value="Cancel">
+                            Cancel
+                        </a>
+                    </p>
+                </div>
+            </form>
         </div>
-        </form>
+
+        <br />
+        <!-- /////////////////upload image files\\\\\\\\\\\\\\\\\\\ -->
+        <!-- /////////////////upload image files\\\\\\\\\\\\\\\\\\\ -->
+
+        <!-- <form action="/api/upload" enctype="multipart/form-data" method="post"> -->
+        <!-- <div>Text field title: <input type="text" name="title" /></div> -->
+        <!-- <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div> -->
+        <!-- <input type="submit" value="Upload" /> -->
+
+    </div>
+    </form>
     </div>
     </div>
 

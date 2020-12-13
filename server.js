@@ -32,9 +32,9 @@ app.set('view engine', 'handlebars')
 // We need to use sessions to keep track of our user's login status
 // Import routes and give the server access to them.
 
-const routes = require('./controllers/ltbController.js')
+// const routes = require('./controllers/ltbController.js')
 
-app.use(routes)
+// app.use(routes)
 
 // app.get('/', (req, res) => {
 //         // Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
