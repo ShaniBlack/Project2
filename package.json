@@ -1,4 +1,4 @@
-{
+{"name": "project_2",
     "version": "1.0.0",
     "test": "npm run lint",
     "start": "node server.js",
