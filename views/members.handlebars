@@ -1,8 +1,7 @@
 <div class="container">
-  <div
-    class="button navbar-burger burger"
-    data-target="navbar-menu"
-    aria-expanded="false">
+  <div class="button navbar-burger burger"
+       data-target="navbar-menu"
+       aria-expanded="false">
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
@@ -10,34 +9,70 @@
 </div>
 <div class="navbar-menu">
   <div class="navbar-end">
-    <a class="navbar-item" id="nav-home" href="./members">
+    <a class="navbar-item"
+       id="nav-home"
+       href="./members">
       Home
     </a>
-    <a class="navbar-item nav-journal" href="./cms">
+    <a class="navbar-item nav-journal"
+       href="./cms">
       My Travel Journal
     </a>
-    <a class="navbar-item nav-reviews" href="./travelers">
+    <a class="navbar-item nav-reviews"
+       href="./travelers">
       Travelers' Reviews
     </a>
-    <a class="navbar-item nav-write" href="./cms">
+    <a class="navbar-item nav-write"
+       href="./cms">
       Write Travel Review
+    </a>
+    <a class="navbar-item nav-logout"
+       href="./logout">
+      Logout
     </a>
   </div>
 </div>
+
 <div class="container">
-  <div class="columns">
-    <div class="column is-6 is-offset-3">
+  <div class="columns is-multiline">
+    <div class="column is-6 is-offset-one-quarter">
       <h2>
-        Welcome
+        So glad you're back!
         <span class="member-name"></span>
       </h2>
     </div>
   </div>
-</div>
-<div class="row pull-right">
-  <div class="col-md-3 blog-container"></div>
-</div>
+</div>      
 
-<script async type="text/javascript" src="/js/bulma.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script async type="text/javascript" src="/js/members.js"></script>
+<section class="section cards">
+ <div class="container">   
+    <div class="column is-quarter">
+      <h2>
+        Write a review about a trip
+      </h2>
+    </div>
+
+    <div class="column is-quarter">
+      <h2>
+        Your past reviews
+      </h2>
+    </div>
+  </div>
+</section>
+  
+{{!-- <div class="row pull-right"> --}}
+
+<div class="container">
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      Your photos!
+    </div>
+  </div>  
+</div>
+    <script async
+            type="text/javascript"
+            src="/js/bulma.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async
+            type="text/javascript"
+            src="/js/members.js"></script>
