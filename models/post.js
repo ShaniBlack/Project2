@@ -27,9 +27,9 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             len: [1]
         },
-        image: {
-            type:
-        }
+        // image: {
+        //     type:
+        // }
     });
 
     Post.associate = function(models) {

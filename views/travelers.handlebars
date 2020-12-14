@@ -1,9 +1,7 @@
 <div class="container">
-  <div
-    class="button navbar-burger burger"
-    data-target="navbar-menu"
-    aria-expanded="false"
-  >
+  <div class="button navbar-burger burger"
+       data-target="navbar-menu"
+       aria-expanded="false">
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
@@ -11,83 +9,71 @@
 </div>
 <div class="navbar-menu">
   <div class="navbar-end">
-    <a class="navbar-item" id="nav-home" href="./members">
-      Home
+    <a class="navbar-item has-text-black"
+       id="nav-home"
+       href="/">
+      home
     </a>
-    <a class="navbar-item nav-journal" href="./cms">
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./cms">
       My Travel Journal
     </a>
-    <a class="navbar-item nav-reviews" href="./travelers">
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./travelers">
       Travelers' Reviews
     </a>
-    <a class="navbar-item nav-write" href="./cms">
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./cms">
       Write Travel Review
     </a>
-  </div>
-</div>
-<div class="container">
-  <div class="row top-30">
-    <div class="col-md-2 col-sm-2">
-      <a class="btn btn-default" href="/blog">
-        Go to Blog
-      </a>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <a class="btn btn-default" href="/cms">
-        New Post
-      </a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="traveler-container">
-        <h1>
-          Travelers
-        </h1>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>
-                Name
-              </th>
-              <th>
-                # of Posts
-              </th>
-              <th>
-                See Traveler's Posts
-              </th>
-              <th>
-                New Post
-              </th>
-              <th>
-                Delete Traveler
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr id="form-row">
-              <form id="traveler-form">
-                <td colspan="4">
-                  <input
-                    placeholder="Enter a name"
-                    id="traveler-name"
-                    type="text"
-                  />
-                </td>
-                <td>
-                  <button type="submit" class="btn btn-success">
-                    Create Traveler
-                  </button>
-                </td>
-              </form>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./logout">
+      Logout
+    </a>
 
-<script async type="text/javascript" src="/js/bulma.js"></script>
+  </div>
+</div>
+	<div class="container traveler-container is-rounded">
+		<div class="columns">
+			<div class="column is-8 is-offset-2">
+					<h1 class="title">travelers</h1>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th># of Posts</th>
+								<th>See Traveler's Posts</th>
+								<th>New Post</th>
+								<th>Create Traveler</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="form-row">
+								<form id="traveler-form">
+									<td colspan="4">
+										<input placeholder="Enter a name"
+											   id="traveler-name"
+											   type="text" />
+									</td>
+									<td><button type="submit"
+												class="btn is-success is-rounded has-text-black" id="create-traveler">create traveler</button>
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+<script async
+        type="text/javascript"
+        src="/js/bulma.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script async type="text/javascript" src="/js/blog.js"></script>
+<script async
+        type="text/javascript"
+        src="/js/blog.js"></script>
