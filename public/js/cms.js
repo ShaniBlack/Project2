@@ -5,6 +5,8 @@ $(document).ready(function () {
   const cityInput = $('#city')
   const lodgingInput = $('#lodging')
   const ratingsInput = $('#ratings')
+  let imageName = ''
+  let imageUrl = ''
   const cmsForm = $('#cms')
   const travelerSelect = $('#traveler')
   // Adding an event listener for when the form is submitted traveler author
@@ -16,6 +18,17 @@ $(document).ready(function () {
   // Sets a flag for whether or not we're updating a post to be false initially
   let updating = false
 
+  const fileInput = document.querySelector('#fileUpload input[type=file]')
+
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector('#fileUpload .file-name')
+      fileName.textContent = fileInput.files[0].name
+      imageName = fileName.textContent
+      imageUrl = 'assets/file_uploads/' + imageName
+    }
+  }
+
   // If we have this section in our url, we pull out the post id from the url
   // In '?post_id=1', postId is 1
   if (url.indexOf('?post_id=') !== -1) {
@@ -23,7 +36,7 @@ $(document).ready(function () {
     getPostData(postId, 'post')
   } else if (url.indexOf('?traveler_id=') !== -1) {
     travelerId = url.split('=')[1]
-  // Otherwise if we have an traveler_id in our url, preset the traveler select box to be our traveler
+    // Otherwise if we have an traveler_id in our url, preset the traveler select box to be our traveler
   }
 
   // Getting the travelers, and their posts
@@ -32,11 +45,13 @@ $(document).ready(function () {
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit (event) {
     event.preventDefault()
+    // uploadImage(event)
     // Wont submit the post if we are missing a body, title, or traveler
     if (!titleInput.val().trim() || !bodyInput.val().trim() || !travelerSelect.val()) {
       return
     }
     // Constructing a newPost object to hand to the database
+
     const newPost = {
       title: titleInput
         .val()
@@ -53,6 +68,9 @@ $(document).ready(function () {
       body: bodyInput
         .val()
         .trim(),
+      image: imageUrl,
+      // .val()
+      // .trim(),
       TravelerId: travelerSelect.val()
     }
 
@@ -61,8 +79,10 @@ $(document).ready(function () {
     if (updating) {
       newPost.id = postId
       updatePost(newPost)
+      // uploadImage(event)
     } else {
       submitPost(newPost)
+      // uploadImage(event)
     }
   }
 
@@ -72,6 +92,12 @@ $(document).ready(function () {
       window.location.href = '/blog'
     })
   }
+
+  //* *******// function uploadImage (data) {
+  //   $.post('/api/upload', data, function () {
+  //     console.log('hello')
+  //   })
+  // }
 
   // Gets post data for the current post if we're editing, or if we're adding to an traveler's existing posts
   function getPostData (id, type) {
