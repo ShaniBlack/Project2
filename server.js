@@ -1,9 +1,9 @@
 // Requiring necessary npm packages
 const express = require('express')
 const session = require('express-session')
-    // Requiring passport as we've configured it
+// Requiring passport as we've configured it
 const passport = require('./config/passport')
-    // const path = require('path')
+// const path = require('path')
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080
@@ -14,7 +14,7 @@ const db = require('./models')
 // Creating express app and configuring middleware needed for authentication
 const app = express()
 app.use(express.urlencoded({
-    extended: true
+  extended: true
 }))
 
 app.use(express.json())
@@ -25,7 +25,7 @@ app.use(express.static('public'))
 const exphbs = require('express-handlebars')
 
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+  defaultLayout: 'main'
 }))
 app.set('view engine', 'handlebars')
 
@@ -43,7 +43,7 @@ app.set('view engine', 'handlebars')
 // app.set('views', path.join(__dirname, 'views'));
 /// /------^^^^^HANDLEBARS^^^^^------//////////////////////////////
 
-/////file uploads////
+/// //file uploads////
 // const http = require('http')
 // const formidable = require('formidable')
 // const fs = require('fs')
@@ -141,14 +141,14 @@ app.set('view engine', 'handlebars')
 //   // If `options.hash` calculation was set, you can read the hex digest out of this var.
 //   file.hash: string | 'sha1' | 'md5' | 'sha256' | null;
 // }
-/////file uploads////
+/// //file uploads////
 
 app.use(
-    session({
-        secret: 'keyboard cat',
-        resave: true,
-        saveUninitialized: true
-    })
+  session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+  })
 )
 app.use(passport.initialize())
 app.use(passport.session())
@@ -161,13 +161,13 @@ require('./routes/traveler-api-routes.js')(app)
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({
-    force: false
+  force: false
 }).then(() => {
-    app.listen(PORT, () => {
-        console.log(
-            '==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.',
-            PORT,
-            PORT
-        )
-    })
+  app.listen(PORT, () => {
+    console.log(
+      '==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.',
+      PORT,
+      PORT
+    )
+  })
 })

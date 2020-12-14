@@ -26,51 +26,51 @@
 //     }
 // }).listen(9000)
 
-const express = require('express');
-const formidable = require('formidable');
+const express = require('express')
+const formidable = require('formidable')
 const fs = require('fs')
-const app = express();
+const app = express()
 
 app.get('/', (req, res) => {
-    res.send(`
+  res.send(`
     <h2>With <code>"express"</code> npm package</h2>
     <form action="/api/upload" enctype="multipart/form-data" method="post">
       <div>Text field title: <input type="text" name="title" /></div>
       <div>File: <input type="file" name="filetoupload" multiple="multiple" /></div>
       <input type="submit" value="Upload" />
     </form>
-  `);
-});
+  `)
+})
 
 app.post('/api/upload', (req, res, next) => {
-    const form = formidable({
-        multiples: true
-    });
-    form.parse(req, (err, fields, files) => {
-        console.log("fields:" + fields.title)
-        console.log(JSON.stringify(files.filetoupload, null, '\t'))
+  const form = formidable({
+    multiples: true
+  })
+  form.parse(req, (err, fields, files) => {
+    console.log('fields:' + fields.title)
+    console.log(JSON.stringify(files.filetoupload, null, '\t'))
 
-        const oldpath = files.filetoupload.path
-        const newpath = '../file_uploads/' + files.filetoupload.name
-        console.log(newpath)
-        fs.rename(oldpath, newpath, function(err) {
-            if (err) throw err;
-        });
-        if (err) {
-            next(err);
-            return;
-        }
-        console.log('File uploaded and moved!');
-        res.json({
-            fields,
-            files
-        });
-    });
-});
+    const oldpath = files.filetoupload.path
+    const newpath = '../file_uploads/' + files.filetoupload.name
+    console.log(newpath)
+    fs.rename(oldpath, newpath, function (err) {
+      if (err) throw err
+    })
+    if (err) {
+      next(err)
+      return
+    }
+    console.log('File uploaded and moved!')
+    res.json({
+      fields,
+      files
+    })
+  })
+})
 
 app.listen(9000, () => {
-    console.log('Server listening on http://localhost:9000 ...');
-});
+  console.log('Server listening on http://localhost:9000 ...')
+})
 
 // export interface File {
 //   // The size of the uploaded file in bytes.
