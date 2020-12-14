@@ -48,46 +48,27 @@ $(document).ready(function () {
   // This function constructs a post's HTML
   function createNewRow (post) {
     const formattedDate = new Date(post.createdAt).toLocaleDateString()
-    const newPostCard = $('<div class="card">')
-    // newPostCard.css({
-
-    //   width: '200px',
-    //   height: '100px',
-    //   overflow: 'scroll'
-
-    // })
-    // newPostCard.addClass('card')
-    // newPostCard.css({
-    //   margin: '10px'
-    // })
+    const newPostCard = $('<div>')
+    newPostCard.addClass('card')
+    newPostCard.css({
+      margin: '10px'
+    })
     const newPostCardHeading = $('<div>')
-    newPostCardHeading.addClass('card-header')
+    newPostCardHeading.addClass('blog-header has-text-black')
     const newPostTitle = $('<h5>')
-    // const newPostDate = $('<small>')
     const newPostTraveler = $('<h6>')
     const newPostCardFooting = $('<div>')
-    newPostCardFooting.addClass('card-Footer')
-    newPostTraveler.text(` City:  ${post.city}   Rating:  ${post.ratings}  `)
-    // newPostTraveler.css({
-    //   float: 'right',
-    //   color: 'blue',
-    //   'margin-top': '-10px'
-    // })
+    newPostCardFooting.addClass('blog-footer has-text-black')
+    newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Rating:  ${post.ratings}  `)
 
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
-    newPostTitle.text(post.title + ' ')
     newPostBody.text(post.body)
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)
     newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
-    // newPostCardFooting.css({
-    //   float: 'right',
-    //   color: 'blue',
-    //   'margin-top': '-10px'
-    // })
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
     newPostCard.append(newPostCardFooting)

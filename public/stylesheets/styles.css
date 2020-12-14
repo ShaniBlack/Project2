@@ -69,3 +69,15 @@ html {
   font-family: "Sofia";
   font-weight: bold;
 }
+
+.blog-header {
+  float: left;
+  color: black;
+  font-family: "Ubuntu";
+}
+
+.blog-footer {
+  float: right;
+  color: black;
+  font-family: "Sofia";
+}
