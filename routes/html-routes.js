@@ -81,8 +81,8 @@ module.exports = function(app) {
     app.get('/blog', (req, res) => {
         res.render('blog');
     });
-    app.get('/traveler-manager', (req, res) => {
-        res.render('traveler-manager');
+    app.get('/travelers', (req, res) => {
+        res.render('travelers');
     });
 
 }

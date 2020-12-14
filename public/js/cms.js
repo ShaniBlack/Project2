@@ -19,6 +19,7 @@ $(document).ready(function() {
     let updating = false
 
     const fileInput = document.querySelector('#fileUpload input[type=file]');
+
     fileInput.onchange = () => {
         if (fileInput.files.length > 0) {
             const fileName = document.querySelector('#fileUpload .file-name');
@@ -44,11 +45,13 @@ $(document).ready(function() {
     // A function for handling what happens when the form to create a new post is submitted
     function handleFormSubmit(event) {
         event.preventDefault()
+            // uploadImage(event)
             // Wont submit the post if we are missing a body, title, or traveler
         if (!titleInput.val().trim() || !bodyInput.val().trim() || !travelerSelect.val()) {
             return
         }
         // Constructing a newPost object to hand to the database
+
         const newPost = {
             title: titleInput
                 .val()
@@ -76,15 +79,25 @@ $(document).ready(function() {
         if (updating) {
             newPost.id = postId
             updatePost(newPost)
+                // uploadImage(event)
         } else {
             submitPost(newPost)
+                // uploadImage(event)
         }
+
+
     }
 
     // Submits a new post and brings user to blog page upon completion
     function submitPost(post) {
         $.post('/api/posts', post, function() {
             window.location.href = '/blog'
+        })
+    }
+
+    function uploadImage(data) {
+        $.post('/api/upload', data, function() {
+            console.log("hello")
         })
     }
 
