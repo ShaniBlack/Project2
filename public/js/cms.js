@@ -5,6 +5,8 @@ $(document).ready(function() {
     const cityInput = $('#city')
     const lodgingInput = $('#lodging')
     const ratingsInput = $('#ratings')
+    let imageName = '';
+    let imageUrl = '';
     const cmsForm = $('#cms')
     const travelerSelect = $('#traveler')
         // Adding an event listener for when the form is submitted traveler author
@@ -15,6 +17,16 @@ $(document).ready(function() {
     let travelerId
         // Sets a flag for whether or not we're updating a post to be false initially
     let updating = false
+
+    const fileInput = document.querySelector('#fileUpload input[type=file]');
+    fileInput.onchange = () => {
+        if (fileInput.files.length > 0) {
+            const fileName = document.querySelector('#fileUpload .file-name');
+            fileName.textContent = fileInput.files[0].name;
+            imageName = fileName.textContent;
+            imageUrl = 'assets/file_uploads/' + imageName;
+        }
+    }
 
     // If we have this section in our url, we pull out the post id from the url
     // In '?post_id=1', postId is 1
@@ -53,6 +65,9 @@ $(document).ready(function() {
             body: bodyInput
                 .val()
                 .trim(),
+            image: imageUrl,
+            // .val()
+            // .trim(),
             TravelerId: travelerSelect.val()
         }
 

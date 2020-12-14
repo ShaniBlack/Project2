@@ -57,7 +57,7 @@ module.exports = function(app) {
             console.log(JSON.stringify(files.filetoupload, null, '\t'))
 
             const oldpath = files.filetoupload.path
-            const newpath = 'assets/file_uploads/' + files.filetoupload.name
+            const newpath = 'public/assets/file_uploads/' + files.filetoupload.name
             console.log(newpath)
             fs.rename(oldpath, newpath, function(err) {
                 if (err) throw err;

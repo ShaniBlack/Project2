@@ -36,7 +36,7 @@
     </div> -->
 <div class="columns">
   <div class="column is-offset-3 is-one-third">
-    <form id="cms">
+    <form id="cms" action="/api/upload" enctype="multipart/form-data" method="post">
       <div class="form-class">
         <div class="field">
           <div class="control">
@@ -109,6 +109,38 @@
               id="body"
             ></textarea>
           </div>
+           <br />
+    {{!-- <form action="/api/upload" enctype="multipart/form-data" method="post"> --}}
+      <div class="field mt-2 p-2">
+          <div id="fileUpload" class="file has-name">
+            <label class="file-label">File:
+                <input class="file-input p-2" type="file" name="filetoupload" multiple="multiple"/>
+                <span class="file-cta">
+                <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Choose an Image…
+                </span>
+                </span>
+                <span class="file-name">
+                No file uploaded
+                </span>
+                
+            </label>
+            </div>
+          {{!-- <div class="control m-1 p-1">File: 
+            <input class="primary" type="file" name="filetoupload" multiple="multiple" />
+          </div> --}}
+          <div class="control m-1 p-1">Add Image Title:
+            <input class="field" type="text" name="title" />
+          </div>
+          {{!-- <div class="control m-1 p-1">
+            <input class="button is-info" type="submit" value="Upload" />
+          </div> --}}
+      </div>
+    {{!-- </form> --}}
+    
           <label class="category">
             Select Traveler:
           </label>
@@ -124,68 +156,38 @@
             </div>
           </div>
         </div>
-        <button class="button is-success is-rounded" type="submit">
-          Submit
-        </button>
+        <input class="button is-info" type="submit" value="Upload" />
       </div>
     </form>
-    <br />
-  </div>
-    <form action="/api/upload" id="" enctype="multipart/form-data" method="post">
+   
+  </div>    
+</div>
+    {{!-- <form action="/api/upload" id="" enctype="multipart/form-data" method="post">
       <div class="field">
-        <label class="label">
-          Upload an Image
-        </label>
-        <!-- <div class="control">
-            <input type="file" name="someExpressFiles" multiple="multiple" />
-         <p class="help is-success">This username is available</p>
-     <input type="submit" value="Upload" />
-        </div> -->
+        <label class="label">Upload an Image</label>
         <div class="file">
-          <div>
-            File:
-            <label class="file-label">
-              <input
-                class="file-input"
-                type="file"
-                name="filetoupload"
-                multiple="multiple"
-              />
+          <div>File:
+              <input class="file-input" type="file" name="filetoupload" multiple="multiple" /></div>
               <span class="file-cta">
                 <span class="file-icon">
                   <i class="fas fa-upload"></i>
                 </span>
-
-                <span class="file-label">
-                  Choose a file…
-                </span>
+                <span class="file-label">Choose a file…</span>
               </span>
-            </label>
-          </div>
-          <p class="help is-success">
-            file name
-          </p>
+            
+          
+          <p class="help is-success">file name</p>
         </div>
         <div class="control has-icons-left has-icons-right">
-          <input
-            class="input"
-            type="text"
-            placeholder="Title for Your Image"
-            name="title"
-          />
+          <input class="input" type="text" placeholder="Title for Your Image" name="title" />
           <span class="icon is-small is-left">
             <i class="fas fa-image"></i>
           </span>
-          <!-- <span class="icon is-small is-right">
-                                            <i class="fas fa-check"></i>
-                                        </span> -->
         </div>
       </div>
       <div class="field is-grouped">
         <p class="control">
-          <a type="submit" class="button is-primary" value="Upload">
-            Upload
-          </a>
+            <input type="submit" class="button is-primary" value="Upload">Upload</a>
         </p>
         <p class="control">
           <a class="button is-light" value="Cancel">
@@ -193,13 +195,8 @@
           </a>
         </p>
       </div>
-    </form>
-    <form action="/api/upload" enctype="multipart/form-data" method="post">
-      <div>Text field title: <input type="text" name="title" /></div>
-      <div>File: <input type="file" name="filetoupload" multiple="multiple" /></div>
-      <input type="submit" value="Upload" />
-    </form>
-</div>
+    </form> --}}
+
 <!-- /////////////////upload image files\\\\\\\\\\\\\\\\\\\ -->
 
 <!-- /////////////////upload image files\\\\\\\\\\\\\\\\\\\ -->
