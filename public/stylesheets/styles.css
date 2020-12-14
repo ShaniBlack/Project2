@@ -27,11 +27,13 @@ html {
 .login-welcome {
   font-family: "Ubuntu", sans-serif;
   font-size: 40px;
+  padding-top: 0;
 }
 
 #login-little {
   font-family: "Sofia", sans-serif;
   font-size: 50px;
+  margin-bottom: 0%;
 }
 
 #small-login {
