@@ -3,64 +3,58 @@
 
 <head>
 	<meta charset="UTF-8">
-	<!-- Latest compiled and minified CSS & JS --> 
-	<link
-	rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-	/>
-	<script
-	defer
-	src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
-	></script>
-	<link href="./stylesheets/styles.css" rel="stylesheet" />
-	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-	
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet"
+		  href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+	<script defer
+			src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+	<link href="./stylesheets/styles.css"
+		  rel="stylesheet" />
+
+	<link rel="stylesheet"
+		  href="https://fonts.googleapis.com/css?family=Sofia">
+	<link rel="preconnect"
+		  href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+		  rel="stylesheet">
+
 	<title>CMS - Express</title>
-  </head>
+</head>
 
 <body>
-	<div class = "container">
-		<div class="button navbar-burger burger" data-target="navbar-menu" aria-expanded="false">
-		   <span aria-hidden="true"></span>
-		   <span aria-hidden="true"></span>
-		   <span aria-hidden="true"></span>
-		</div>
-	 </div>
-	 <div class="navbar-menu">
-		<div class="navbar-end">
-		   <a class="navbar-item" id="nav-home" href="./members">
-			 Home
-		   </a>
-		   <a class="navbar-item nav-journal" href="./cms">
-			 My Travel Journal
-		   </a>
-		   <a class="navbar-item nav-reviews" href="./travelers">
-			 Travelers' Reviews
-		   </a>
-		   <a class="navbar-item nav-write" href="./cms">
-			 Write Travel Review
-		   </a>
-		</div>
-	 </div>
-  </nav>
-</div>
-</section>
-
 	<div class="container">
-		<div class="row top-30">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/blog">Go to Blog</a>
-      </div>
-			<div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/cms">New Post</a>
-      </div>
-    </div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="traveler-container">
+		<div class="button navbar-burger burger"
+			 data-target="navbar-menu"
+			 aria-expanded="false">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</div>
+	</div>
+	<div class="navbar-menu">
+		<div class="navbar-end">
+			<a class="navbar-item"
+			   id="nav-home"
+			   href="./members">
+				Home
+			</a>
+			<a class="navbar-item nav-journal"
+			   href="./cms">
+				My Travel Journal
+			</a>
+			<a class="navbar-item nav-reviews"
+			   href="./travelers">
+				Travelers' Reviews
+			</a>
+			<a class="navbar-item nav-write"
+			   href="./cms">
+				Write Travel Review
+			</a>
+		</div>
+
+	<div class="container traveler-container">
+		<div class="columns">
+			<div class="column is-8 is-offset-2">
 					<h1>Travelers</h1>
 					<table class="table table-striped">
 						<thead>
@@ -76,9 +70,12 @@
 							<tr id="form-row">
 								<form id="traveler-form">
 									<td colspan="4">
-										<input placeholder="Enter a name" id="traveler-name" type="text" />
+										<input placeholder="Enter a name"
+											   id="traveler-name"
+											   type="text" />
 									</td>
-									<td><button type="submit" class="btn btn-success">Create Traveler</button>
+									<td>
+										<button class="btn is-success is-rounded" type="submit">Create Traveler</button>
 									</td>
 								</form>
 							</tr>
@@ -87,12 +84,14 @@
 				</div>
 			</div>
 		</div>
-		</d>
-		<!-- Custom Script -->
-		<script async type="text/javascript" src="../js/bulma.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/traveler.js"></script>
-	  
+	<!-- Custom Script -->
+	<script async
+			type="text/javascript"
+			src="../js/bulma.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript"
+			src="js/travelers.js"></script>
+
 </body>
 
 </html>

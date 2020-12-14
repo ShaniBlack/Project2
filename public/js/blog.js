@@ -38,8 +38,9 @@ $(document).ready(function () {
     blogContainer.empty()
     const postsToAdd = []
     for (let i = 0; i < posts.length; i++) {
+      if (postsToAdd.length < 5) {
       postsToAdd.push(createNewRow(posts[i]))
-    }
+    }}
     blogContainer.append(postsToAdd)
   }
 
@@ -47,18 +48,18 @@ $(document).ready(function () {
   // This function constructs a post's HTML
   function createNewRow (post) {
     const formattedDate = new Date(post.createdAt).toLocaleDateString()
-    const newPostCard = $('<div>')
-    newPostCard.css({
+    const newPostCard = $('<div class="card">')
+    // newPostCard.css({
 
-      width: '200px',
-      height: '100px',
-      overflow: 'scroll'
+    //   width: '200px',
+    //   height: '100px',
+    //   overflow: 'scroll'
 
-    })
-    newPostCard.addClass('card')
-    newPostCard.css({
-      margin: '10px'
-    })
+    // })
+    // newPostCard.addClass('card')
+    // newPostCard.css({
+    //   margin: '10px'
+    // })
     const newPostCardHeading = $('<div>')
     newPostCardHeading.addClass('card-header')
     const newPostTitle = $('<h5>')
@@ -66,31 +67,27 @@ $(document).ready(function () {
     const newPostTraveler = $('<h6>')
     const newPostCardFooting = $('<div>')
     newPostCardFooting.addClass('card-Footer')
-    newPostTraveler.text(` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
-    newPostTraveler.css({
-      float: 'right',
-      color: 'blue',
-      'margin-top': '-10px'
-    })
+    newPostTraveler.text(` City:  ${post.city}   Rating:  ${post.ratings}  `)
+    // newPostTraveler.css({
+    //   float: 'right',
+    //   color: 'blue',
+    //   'margin-top': '-10px'
+    // })
 
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
     newPostTitle.text(post.title + ' ')
     newPostBody.text(post.body)
-    // newPostDate.text(formattedDate)
-    // newPostTitle.append(newPostDate)
-    // newPostCardHeading.append(deleteBtn)
-    // newPostCardHeading.append(editBtn)
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)
-    newPostCardFooting.append(` Written by:  ${post.Traveler.name} ` + formattedDate)
-    newPostCardFooting.css({
-      float: 'right',
-      color: 'blue',
-      'margin-top': '-10px'
-    })
+    newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
+    // newPostCardFooting.css({
+    //   float: 'right',
+    //   color: 'blue',
+    //   'margin-top': '-10px'
+    // })
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
     newPostCard.append(newPostCardFooting)
@@ -98,25 +95,6 @@ $(document).ready(function () {
 
     return newPostCard
   }
-
-  // This function figures out which post we want to delete and then calls deletePost
-  // function handlePostDelete () {
-  //   const currentPost = $(this)
-  //     .parent()
-  //     .parent()
-  //     .data('post')
-  //   deletePost(currentPost.id)
-  // }
-
-  // This function figures out which post we want to edit and takes it to the appropriate url
-  // function handlePostEdit () {
-  //   const currentPost = $(this)
-  //     .parent()
-  //     .parent()
-  //     .data('post')
-  //   window.location.href = '/cms?post_id=' + currentPost.id
-  // }
-
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
     const query = window.location.search

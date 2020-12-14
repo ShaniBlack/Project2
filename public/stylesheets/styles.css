@@ -48,7 +48,7 @@ html {
 
 #nav-home {
   font-family: "Sofia";
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #nav-ubuntu {
@@ -58,4 +58,14 @@ html {
 
 .title {
   font-family: "Sofia";
+}
+
+.table-striped
+#traveler-name {
+  font-family: "Ubuntu";
+}
+
+#create-traveler {
+  font-family: "Sofia";
+  font-weight: bold;
 }
