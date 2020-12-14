@@ -1,9 +1,5 @@
 <div class="container">
-  <div
-    class="button navbar-burger burger"
-    data-target="navbar-menu"
-    aria-expanded="false"
-  >
+  <div class="button navbar-burger burger" data-target="navbar-menu" aria-expanded="false">
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
@@ -43,104 +39,81 @@
             <label class="title">
               Country:
             </label>
-            <input
-              class="input is-rounded"
-              id="title"
-              placeholder="Country"
-              type="text"
-            />
+            <input class="input is-rounded" name="country" id="title" placeholder="Country" type="text" />
           </div>
           <!-- <br /> -->
           <div class="control">
             <label class="city">
               City:
             </label>
-            <input
-              class="input is-rounded"
-              id="city"
-              placeholder="City"
-              type="text"
-            />
+            <input class="input is-rounded" name="city" id="city" placeholder="City" type="text" />
           </div>
           <!-- <br /> -->
           <div class="control">
             <label class="lodging">
               Lodging:
             </label>
-            <input
-              class="input is-rounded"
-              id="lodging"
-              placeholder="Lodging"
-              type="text"
-            />
+            <input class="input is-rounded" name="lodging" id="lodging" placeholder="Lodging" type="text" />
           </div>
           <!-- <br /> -->
           <div class="control">
             <label class="ratings">
               Ratings:
             </label>
-            <input
-              class="input is-rounded"
-              id="ratings"
-              placeholder="Foods or Places you Enjoyed Most"
-              type="text"
-            />
+            <input class="input is-rounded" name="ratings" id="ratings" placeholder="Foods or Places you Enjoyed Most" type="text" />
           </div>
           <br />
           <div class="control">
             <label class="title">
               Activities:
             </label>
-            <input
-              class="input is-rounded"
-              id="title"
-              placeholder="Favorite Activities on Trip"
-              type="text"
-            />
+            <input class="input is-rounded" name="title" id="title" placeholder="Favorite Activities on Trip" type="text" />
           </div>
           <div class="control">
             <label class="body">
               Journal Entry:
             </label>
-            <textarea
-              class="textarea is-rounded is-half"
-              placeholder="Journal"
-              rows="10"
-              id="body"
-            ></textarea>
+            <textarea class="textarea is-rounded is-half" name="body" placeholder="Journal" rows="10" id="body"></textarea>
           </div>
-           <br />
-    {{!-- <form action="/api/upload" enctype="multipart/form-data" method="post"> --}}
-      <div class="field mt-2 p-2">
-          <div id="fileUpload" class="file has-name">
-            <label class="file-label">File:
-                <input class="file-input p-2" type="file" name="filetoupload" multiple="multiple"/>
+          <br />
+          {{!-- <form action="/api/upload" enctype="multipart/form-data" method="post"> --}}
+          <div class="field mt-2 p-2">
+            <div id="fileUpload" class="file has-name">
+              <label class="file-label">File:
+                <input class="file-input p-2" type="file" name="filetoupload" multiple="multiple" />
                 <span class="file-cta">
-                <span class="file-icon">
+                  <span class="file-icon">
                     <i class="fas fa-upload"></i>
-                </span>
-                <span class="file-label">
+                  </span>
+                  <span class="file-label">
                     Choose an Image…
-                </span>
+                  </span>
                 </span>
                 <span class="file-name">
-                No file uploaded
+                  No file uploaded
                 </span>
-                
-            </label>
+
+              </label>
             </div>
-          {{!-- <div class="control m-1 p-1">File: 
+            {{!-- <div class="control m-1 p-1">File: 
             <input class="primary" type="file" name="filetoupload" multiple="multiple" />
           </div> --}}
-          <div class="control m-1 p-1">Add Image Title:
-            <input class="field" type="text" name="title" />
+            <div class="control m-1 p-1">Add Image Title:
+              <input class="field" type="text" name="imgTitle" />
+            </div>
+
+          <div class="control m-1 p-1">
+            <label class="title">
+              Add Image Title:
+            </label>
+            <input class="input" id="imageTitle" placeholder="Add Image Title" type="text" name="imgTitle" />
           </div>
-          {{!-- <div class="control m-1 p-1">
+            {{!-- <div class="control m-1 p-1">
             <input class="button is-info" type="submit" value="Upload" />
           </div> --}}
-      </div>
-    {{!-- </form> --}}
-    
+          </div>
+          {{!-- </form> --}}
+
           <label class="category">
             Select Traveler:
           </label>
@@ -159,10 +132,10 @@
         <input class="button is-info" type="submit" value="Upload" />
       </div>
     </form>
-   
-  </div>    
+
+  </div>
 </div>
-    {{!-- <form action="/api/upload" id="" enctype="multipart/form-data" method="post">
+{{!-- <form action="/api/upload" id="" enctype="multipart/form-data" method="post">
       <div class="field">
         <label class="label">Upload an Image</label>
         <div class="file">
@@ -208,7 +181,5 @@
 
 <!-- Custom Script -->
 <script async type="text/javascript" src="../js/bulma.js"></script>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/cms.js"></script>
