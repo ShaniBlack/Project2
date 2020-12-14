@@ -4,7 +4,10 @@
 
 // Dependencies
 // =============================================================
-
+// const express = require('express');
+const formidable = require('formidable')
+const fs = require('fs')
+// const app = express();
 // Requiring our models
 const db = require('../models')
 
@@ -45,6 +48,32 @@ module.exports = function (app) {
     })
   })
 
+  app.post('/api/upload', (req, res, next) => {
+    const form = formidable({
+      multiples: true
+    })
+    form.parse(req, (err, fields, files) => {
+      console.log('fields:' + fields.title)
+      console.log(JSON.stringify(files.filetoupload, null, '\t'))
+
+      const oldpath = files.filetoupload.path
+      const newpath = 'public/assets/file_uploads/' + files.filetoupload.name
+      console.log(newpath)
+      fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err
+      })
+      if (err) {
+        next(err)
+        return
+      }
+      console.log('File uploaded and moved!')
+      res.json({
+        fields,
+        files
+      })
+    })
+  })
+
   // DELETE route for deleting posts
   app.delete('/api/posts/:id', function (req, res) {
     db.Post.destroy({
@@ -59,8 +88,7 @@ module.exports = function (app) {
   // PUT route for updating posts
   app.put('/api/posts', function (req, res) {
     db.Post.update(
-      req.body,
-      {
+      req.body, {
         where: {
           id: req.body.id
         }
