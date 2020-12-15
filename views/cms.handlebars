@@ -11,8 +11,8 @@
   <div class="navbar-end">
     <a class="navbar-item has-text-black"
        id="nav-home"
-       href="/">
-      Home
+       href="./members">
+      home
     </a>
     <a class="navbar-item has-text-black"
        id="nav-ubuntu"
@@ -143,13 +143,21 @@
           </div>
           {{!-- </form> --}}
 
-          <input class="button is-info"
+          <input class="button is-success is-rounded"
                  type="submit"
                  value="Upload" />
         </div>
     </form>
-
-  </div>
+      <a href="/login">
+        <button class="button is-rounded is-success is-info is-medium is-half">
+          Save to Journal
+        </button>
+      </a>
+      <a href="/blog">
+        <button class="button is-rounded is-success is-info is-medium is-half">
+          Post to Blog
+        </button>
+      </a>
 </div>
 {{!-- <form action="/api/upload" id="" enctype="multipart/form-data" method="post">
       <div class="field">
