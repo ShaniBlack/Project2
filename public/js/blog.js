@@ -60,13 +60,7 @@ $(document).ready(function () {
     const newPostTitle = $('<h5>')
     const newPostTraveler = $('<h6>')
     const newPostCardFooting = $('<div>')
-    // newPostCardFooting.addClass('card-Footer')
-    // newPostTraveler.text(` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
-    // newPostTraveler.css({
-    //   float: 'right',
-    //   color: 'blue',
-    //   'margin-top': '-10px'
-    // })
+    
     const journalBtn = $('<button>')
     journalBtn.text('journal')
     journalBtn.addClass('journal btn btn-info')
@@ -82,11 +76,7 @@ $(document).ready(function () {
     newPostBody.text(post.body)
     const newPostImg = $(`<img src="${post.imageURL}" alt="" srcset="">`)
 
-    // newPostDate.text(formattedDate)
-    // newPostTitle.append(newPostDate)
-    // newPostCardHeading.append(deleteBtn)
-    // newPostCardHeading.append(editBtn)
-    // newPostCardHeading.append(journalBtn)
+    
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCard.append(newPostImg)
@@ -112,9 +102,11 @@ $(document).ready(function () {
   }
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
+    // eslint-disable-next-line no-unused-vars
     const query = window.location.search
     let partial = ''
     if (id) {
+      // eslint-disable-next-line no-unused-vars
       partial = ' for Traveler #' + id
     }
   }
