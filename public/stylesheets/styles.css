@@ -83,3 +83,7 @@ html {
     color: black;
     font-family: "Sofia";
 }
+
+.hidden {
+    display: none;
+}
