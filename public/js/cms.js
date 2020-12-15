@@ -14,7 +14,7 @@ $(document).ready(function () {
   // const imageName = ''
   // const imageUrl = ''
   // const cmsForm = $('#cms')
-  const travelerSelect = $('#traveler')
+  // const travelerSelect = $('#traveler')
   // Adding an event listener for when the form is submitted traveler author updating
   // $(cmsForm).on('submit', handleFormSubmit)
 
@@ -36,35 +36,36 @@ $(document).ready(function () {
       // imagePath = 'assets/file_uploads/' + imageName
     }
   }
+})
 
-  // function uploadImage (data) {
-  //   $.post('/api/upload', data, function () {
-  //     console.log('hello')
-  //   })
-  // }
+// function uploadImage (data) {
+//   $.post('/api/upload', data, function () {
+//     console.log('hello')
+//   })
+// }
 
-  // If we have this section in our url, we pull out the post id from the url
-  // In '?post_id=1', postId is 1
+// If we have this section in our url, we pull out the post id from the url
+// In '?post_id=1', postId is 1
 
-  // if (url.indexOf('?post_id=') !== -1) {
-  //   postId = url.split('=')[1]
-  //   getPostData(postId, 'post')
-  // } else if (url.indexOf('?traveler_id=') !== -1) {
-  //   travelerId = url.split('=')[1]
-  //   // Otherwise if we have an traveler_id in our url, preset the traveler select box to be our traveler
-  // }
+// if (url.indexOf('?post_id=') !== -1) {
+//   postId = url.split('=')[1]
+//   getPostData(postId, 'post')
+// } else if (url.indexOf('?traveler_id=') !== -1) {
+//   travelerId = url.split('=')[1]
+//   // Otherwise if we have an traveler_id in our url, preset the traveler select box to be our traveler
+// }
 
-  // Getting the travelers, and their posts
-  // getTravelers()
+// Getting the travelers, and their posts
+// getTravelers()
 
-  // A function for handling what happens when the form to create a new post is submitted
-  // function handleFormSubmit(event) {
-  //     console.log('event', event)
-  //     console.log('fileinput 0', fileInput.files[0])
-  //     event.preventDefault()
-  //         // uploadImage(event)
-  //         // Wont submit the post if we are missing a body, title, or traveler
-  //     if (!titleInput.val().trim() || !bodyInput.val().trim() || !travelerSelect.val()) {
-  //         return
-  //     }
-  //     // Constructing a newPost object to hand to the database
+// A function for handling what happens when the form to create a new post is submitted
+// function handleFormSubmit(event) {
+//     console.log('event', event)
+//     console.log('fileinput 0', fileInput.files[0])
+//     event.preventDefault()
+//         // uploadImage(event)
+//         // Wont submit the post if we are missing a body, title, or traveler
+//     if (!titleInput.val().trim() || !bodyInput.val().trim() || !travelerSelect.val()) {
+//         return
+//     }
+//     // Constructing a newPost object to hand to the database

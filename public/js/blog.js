@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // blogContainer holds all of our posts Traveler
   const blogContainer = $('.blog-container')
-  $(document).on('click', 'button.save', handlePostSave)
+  // $(document).on('click', 'button.save', handlePostSave)
   // const postCategorySelect = $('#category')
   // Variable to hold our posts
   let posts
@@ -39,9 +39,7 @@ $(document).ready(function () {
     blogContainer.empty()
     const postsToAdd = []
     for (let i = 0; i < posts.length; i++) {
-      if (postsToAdd.length < 5) {
-        postsToAdd.push(createNewRow(posts[i]))
-      }
+      postsToAdd.push(createNewRow(posts[i]))
     }
     blogContainer.append(postsToAdd)
   }
@@ -60,7 +58,7 @@ $(document).ready(function () {
     const newPostTitle = $('<h5>')
     const newPostTraveler = $('<h6>')
     const newPostCardFooting = $('<div>')
-    
+
     const journalBtn = $('<button>')
     journalBtn.text('journal')
     journalBtn.addClass('journal btn btn-info')
@@ -74,14 +72,14 @@ $(document).ready(function () {
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
     newPostBody.text(post.body)
-    const newPostImg = $(`<img src="${post.imageURL}" alt="" srcset="">`)
+    // const newPostImg = $(`<img src="${post.imageURL}" alt="" srcset="">`)
+    newPostCardHeading.append(saveBtn)
 
-    
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
-    newPostCard.append(newPostImg)
+    // newPostCard.append(newPostImg)
     newPostCardBody.append(newPostBody)
-    newPostCardHeading.append(saveBtn)
+    // newPostCardHeading.append(saveBtn)
 
     newPostCardFooting.append(`<div><a href='/blog?traverler_id=${post.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
     // newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
@@ -98,7 +96,7 @@ $(document).ready(function () {
       .parent()
       .parent()
       .data('post')
-    window.location.href = '/members?post_id=' + currentPost.id
+    window.location.href = '/blog?post_id=' + currentPost.id
   }
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
