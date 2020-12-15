@@ -51,8 +51,7 @@ module.exports = function (app) {
   // PUT route for updating journals
   app.put('/api/journals', function (req, res) {
     db.Journal.update(
-      req.body,
-      {
+      req.body, {
         where: {
           id: req.body.id
         }

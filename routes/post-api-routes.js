@@ -42,23 +42,39 @@ module.exports = function (app) {
   })
 
   // POST route for saving a new post
-  app.post('/api/posts', function (req, res) {
-    db.Post.create(req.body).then(function (dbPost) {
-      res.json(dbPost)
-    })
-  })
+  // app.post('/api/posts', function(req, res) {
+  //     db.Post.create(req.body).then(function(dbPost) {
+  //         res.json(dbPost)
+  //     })
+  // })
 
   app.post('/api/upload', (req, res, next) => {
     const form = formidable({
       multiples: true
     })
     form.parse(req, (err, fields, files) => {
-      console.log('fields:' + fields.title)
+      console.log(fields)
+      console.log('fields:' + fields.imgTitle)
       console.log(JSON.stringify(files.filetoupload, null, '\t'))
+      console.log(req.user.id)
 
       const oldpath = files.filetoupload.path
       const newpath = 'public/assets/file_uploads/' + files.filetoupload.name
       console.log(newpath)
+
+      db.Post.create({
+        title: fields.postTitle,
+        country: fields.country,
+        city: fields.city,
+        lodging: fields.lodging,
+        ratings: fields.ratings,
+        activities: fields.activities,
+        body: fields.body,
+        imgTitle: fields.imgTitle,
+        imageUrl: newpath,
+        TravelerId: req.user.id
+      })
+
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err
       })
@@ -66,11 +82,10 @@ module.exports = function (app) {
         next(err)
         return
       }
-      console.log('File uploaded and moved!')
-      res.json({
-        fields,
-        files
-      })
+      console.log('Image uploaded and moved!')
+      console.log('Post added to your Journal!')
+      console.log('taking you to the blog!')
+      res.redirect('/blog')
     })
   })
 

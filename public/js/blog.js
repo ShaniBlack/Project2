@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // blogContainer holds all of our posts Traveler
   const blogContainer = $('.blog-container')
-  $(document).on("click", "button.save", handlePostSave);
+  $(document).on('click', 'button.save', handlePostSave)
   // const postCategorySelect = $('#category')
   // Variable to hold our posts
   let posts
@@ -73,13 +73,15 @@ $(document).ready(function () {
     newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Rating:  ${post.ratings}  `)
     newPostCardFooting.addClass('blog-footer has-text-black')
 
-    const saveBtn = $('<button>');
+    const saveBtn = $('<button>')
     saveBtn.addClass('save btn btn-link').text('save')
 
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
     newPostBody.text(post.body)
+    const newPostImg = $(`<img src="${post.imageURL}" alt="" srcset="">`)
+
     // newPostDate.text(formattedDate)
     // newPostTitle.append(newPostDate)
     // newPostCardHeading.append(deleteBtn)
@@ -87,8 +89,9 @@ $(document).ready(function () {
     // newPostCardHeading.append(journalBtn)
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
+    newPostCard.append(newPostImg)
     newPostCardBody.append(newPostBody)
-    newPostCardHeading.append(saveBtn);
+    newPostCardHeading.append(saveBtn)
 
     newPostCardFooting.append(`<div><a href='/blog?traverler_id=${post.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
     // newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
@@ -97,17 +100,15 @@ $(document).ready(function () {
     newPostCard.append(newPostCardFooting)
     newPostCard.data('post', post)
 
-    
-
     return newPostCard
   }
 
-  function handlePostSave() {
-    var currentPost = $(this)
+  function handlePostSave () {
+    const currentPost = $(this)
       .parent()
       .parent()
-      .data("post");
-    window.location.href = "/members?post_id=" + currentPost.id;
+      .data('post')
+    window.location.href = '/members?post_id=' + currentPost.id
   }
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
@@ -116,13 +117,5 @@ $(document).ready(function () {
     if (id) {
       partial = ' for Traveler #' + id
     }
-    blogContainer.empty()
-    const messageH2 = $('<h2>')
-    messageH2.css({
-      'text-align': 'center',
-      'margin-top': '50px'
-    })
-    messageH2.html(`What are you waiting for,${partial}start telling everyone about your travels in  <a href='/cms${query}'>your littleTravelBook</a>.`)
-    blogContainer.append(messageH2)
   }
 })

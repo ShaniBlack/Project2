@@ -1,4 +1,4 @@
-// Requiring necessary npm packages
+const morgan = require('morgan') // Requiring necessary npm packages
 const express = require('express')
 const session = require('express-session')
 // Requiring passport as we've configured it
@@ -20,6 +20,9 @@ app.use(express.urlencoded({
 app.use(express.json())
 app.use(express.static('public'))
 
+// create "middleware"
+app.use(morgan('combined'))
+
 /// /-----------HANDLEBARS---------//////////////////////////////////////////////////////////////
 // express-handlebars engine setup
 const exphbs = require('express-handlebars')
@@ -29,7 +32,7 @@ app.engine('handlebars', exphbs({
 }))
 app.set('view engine', 'handlebars')
 
-// We need to use sessions to keep track of our user's login status
+// We need to use sessions to keep track of our traveler's login status
 // Import routes and give the server access to them.
 
 // const routes = require('./controllers/ltbController.js')
@@ -159,7 +162,7 @@ require('./routes/api-routes.js')(app)
 require('./routes/post-api-routes.js')(app)
 require('./routes/traveler-api-routes.js')(app)
 
-// Syncing our database and logging a message to the user upon success
+// Syncing our database and logging a message to the traveler upon success
 db.sequelize.sync({
   force: false
 }).then(() => {

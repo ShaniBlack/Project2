@@ -1,7 +1,7 @@
 const db = require('../models')
 
 module.exports = function (app) {
-  // Find all Authors and return them to the user with res.json
+  // Find all Authors and return them to the traveler with res.json
   app.get('/api/travelers', function (req, res) {
     db.Traveler.findAll({
       include: [db.Post]
@@ -11,7 +11,9 @@ module.exports = function (app) {
   })
 
   app.get('/api/travelers/:id', function (req, res) {
-    // Find one Author with the id in req.params.id and return them to the user with res.json
+    console.log('hello')
+    console.log('req.params.id', req.params.id)
+    // Find one Author with the id in req.params.id and return them to the traveler with res.json
     db.Traveler.findOne({
       where: {
         id: req.params.id
