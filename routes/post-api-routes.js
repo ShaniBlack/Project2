@@ -61,6 +61,7 @@ module.exports = function(app) {
             const oldpath = files.filetoupload.path
             const newpath = 'public/assets/file_uploads/' + files.filetoupload.name
             console.log(newpath)
+            let path = new String(files.filetoupload.name)
 
             db.Post.create({
                 title: fields.postTitle,
@@ -71,7 +72,7 @@ module.exports = function(app) {
                 activities: fields.activities,
                 body: fields.body,
                 imgTitle: fields.imgTitle,
-                imageUrl: $(newpath),
+                imageUrl: 'assets/file_uploads/' + path.toString(),
                 TravelerId: req.user.id
             })
 
