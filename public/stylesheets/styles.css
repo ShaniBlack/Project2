@@ -8,13 +8,6 @@ html {
     background-blend-mode: lighten;
 }
 
-
-/* @media screen and (min-width: 768px){
-  .has-bg-img {
-    background-image: url("https://images.unsplash.com/photo-1597401923609-757b6f11e8ce?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
-  }
-} */
-
 .welcome-little {
     font-family: "Sofia", sans-serif;
     font-size: 75px;
@@ -32,14 +25,15 @@ html {
     font-size: 40px;
 }
 
-#login-little {
+#login-little,
+.member-welcome {
     font-family: "Sofia", sans-serif;
     font-size: 50px;
-    margin-top: 24px;
-    margin-bottom: 0px;
+    margin-bottom: 0%;
 }
 
-#small-login {
+#small-login,
+.member-page {
     font-family: "Ubuntu", sans-serif;
     font-size: 30px;
 }
