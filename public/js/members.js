@@ -1,7 +1,9 @@
+let newId = windowVariable;
+console.log(newId)
 $(document).ready(() => {
     // This file just does a GET request to figure out which traveler is logged in
     // and updates the HTML on the page
-    $.get('api/travelers/:id').then(data => {
+    $.get('api/travelers/' + newId).then(data => {
         console.log("data", data)
         $('.member-name').text(data.email)
     })

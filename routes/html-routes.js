@@ -22,11 +22,14 @@ module.exports = function(app) {
         })
         app.get('/signup', (req, res) => {
             if (req.user) {
-                res.render('members')
+                res.render('login')
             }
             res.render('signup')
         })
         app.get('/members', isAuthenticated, (req, res) => {
+            res.render('members')
+        })
+        app.post('/members', isAuthenticated, (req, res) => {
             res.render('members')
         })
         app.get('/cms', (req, res) => {

@@ -25,12 +25,12 @@ module.exports = function(app) {
                 password: req.body.password
             })
             .then(() => {
-                res.redirect(307, '/members')
+                res.redirect(307, "/api/login");
             })
             .catch(err => {
-                res.status(401).json(err)
-            })
-    })
+                res.status(401).json(err);
+            });
+    });
 
     // Route for logging traveler out
     app.get('/logout', (req, res) => {
@@ -38,31 +38,6 @@ module.exports = function(app) {
         res.redirect('/')
     })
 
-    // app.post('/api/upload', (req, res, next) => {
-    //     const form = formidable({
-    //         multiples: true
-    //     });
-    //     form.parse(req, (err, fields, files) => {
-    //         console.log("fields:" + fields.title)
-    //         console.log(JSON.stringify(files.filetoupload, null, '\t'))
-
-    //         const oldpath = files.filetoupload.path
-    //         const newpath = 'assets/file_uploads/' + files.filetoupload.name
-    //         console.log(newpath)
-    //         fs.rename(oldpath, newpath, function(err) {
-    //             if (err) throw err;
-    //         });
-    //         if (err) {
-    //             next(err);
-    //             return;
-    //         }
-    //         console.log('File uploaded and moved!');
-    //         res.json({
-    //             fields,
-    //             files
-    //         });
-    //     });
-    // });
 
     // Route for getting some data about our traveler to be used client side
     app.get('/api/traveler_data', (req, res) => {

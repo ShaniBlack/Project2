@@ -11,6 +11,7 @@ module.exports = function(app) {
     })
 
     app.get('/api/travelers/:id', function(req, res) {
+        console.log("hello")
         console.log("req.params.id", req.params.id)
             // Find one Author with the id in req.params.id and return them to the traveler with res.json
         db.Traveler.findOne({
