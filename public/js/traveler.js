@@ -35,14 +35,23 @@ $(document).ready(function () {
   // Function for creating a new list row for travelers
   function createTravelerRow (travelerData) {
     console.log(travelerData)
+    // const formattedDate = new Date(travelerData.post.createdAt).toLocaleDateString()
+
     const newTr = $('<tr>')
     newTr.data('traveler', travelerData)
     newTr.append('<td>' + travelerData.name + '</td>')
+    // newTr.append('<td>' + travelerData.body + '</td>')
+
     if (travelerData.Posts) {
       newTr.append('<td> ' + travelerData.Posts.length + '</td>')
     } else {
       newTr.append('<td>0</td>')
     }
+    // if (travelerData.Posts) {
+    //   newTr.append('<td> ' + travelerData.Posts.body + '</td>')
+    // } else {
+    //   newTr.append('<td>0</td>')
+    // }
     // newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
     newTr.append("<td><a href='/blog?traveler_id=" + travelerData.id + "'>Go to Posts</a></td>")
     newTr.append("<td><a href='/cms?traveler_id=" + travelerData.id + "'>Create a Post</a></td>")

@@ -120,9 +120,9 @@ $(document).ready(function () {
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
     const query = window.location.search
-    // ßlet partial = ''
+    let partial = ''
     if (id) {
-      // partial = ' for Traveler #' + id
+      partial = ' for Traveler #' + id
     }
     blogContainer.empty()
     const messageH2 = $('<h2>')
@@ -130,8 +130,7 @@ $(document).ready(function () {
       'text-align': 'center',
       'margin-top': '50px'
     })
-    messageH2.html("What are you waiting for, start telling everyone about your travels in  <a href='/cms" + query +
-            "'>your littleTravelBook</a>.")
+    messageH2.html(`What are you waiting for,${partial}start telling everyone about your travels in  <a href='/cms${query}'>your littleTravelBook</a>.`)
     blogContainer.append(messageH2)
   }
 })
