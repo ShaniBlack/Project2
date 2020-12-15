@@ -16,7 +16,7 @@ $(document).ready(function () {
     getPosts()
   }
 
-  // This function grabs posts from the database and updates the view
+  // This function grabs posts from the database and updates the view upDate
   function getPosts (traveler) {
     travelerId = traveler || ''
     if (travelerId) {
@@ -39,8 +39,9 @@ $(document).ready(function () {
     const postsToAdd = []
     for (let i = 0; i < posts.length; i++) {
       if (postsToAdd.length < 5) {
-      postsToAdd.push(createNewRow(posts[i]))
-    }}
+        postsToAdd.push(createNewRow(posts[i]))
+      }
+    }
     blogContainer.append(postsToAdd)
   }
 
@@ -58,6 +59,16 @@ $(document).ready(function () {
     const newPostTitle = $('<h5>')
     const newPostTraveler = $('<h6>')
     const newPostCardFooting = $('<div>')
+    // newPostCardFooting.addClass('card-Footer')
+    // newPostTraveler.text(` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
+    // newPostTraveler.css({
+    //   float: 'right',
+    //   color: 'blue',
+    //   'margin-top': '-10px'
+    // })
+    const journalBtn = $('<button>')
+    journalBtn.text('journal')
+    journalBtn.addClass('journal btn btn-info')
     newPostCardFooting.addClass('blog-footer has-text-black')
     newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Rating:  ${post.ratings}  `)
 
@@ -65,6 +76,11 @@ $(document).ready(function () {
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
     newPostBody.text(post.body)
+    // newPostDate.text(formattedDate)
+    // newPostTitle.append(newPostDate)
+    // newPostCardHeading.append(deleteBtn)
+    // newPostCardHeading.append(editBtn)
+    // newPostCardHeading.append(journalBtn)
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)
@@ -79,9 +95,9 @@ $(document).ready(function () {
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
     const query = window.location.search
-    // ßlet partial = ''
+    let partial = ''
     if (id) {
-      // partial = ' for Traveler #' + id
+      partial = ' for Traveler #' + id
     }
     blogContainer.empty()
     const messageH2 = $('<h2>')
@@ -89,8 +105,7 @@ $(document).ready(function () {
       'text-align': 'center',
       'margin-top': '50px'
     })
-    messageH2.html("What are you waiting for, start telling everyone about your travels in  <a href='/cms" + query +
-            "'>your littleTravelBook</a>.")
+    messageH2.html(`What are you waiting for,${partial}start telling everyone about your travels in  <a href='/cms${query}'>your littleTravelBook</a>.`)
     blogContainer.append(messageH2)
   }
 })

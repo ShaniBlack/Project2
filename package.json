@@ -1,4 +1,5 @@
-{"name": "project_2",
+{
+    "name": "project_2",
     "version": "1.0.0",
     "engines": {
         "node": "15.x"
@@ -18,10 +19,12 @@
         "express": "^4.17.1",
         "express-handlebars": "^5.2.0",
         "express-session": "^1.16.1",
+        "formidable": "^1.2.2",
         "lint": "^0.7.0",
         "morgan": "^1.10.0",
         "mysql2": "^1.6.5",
         "nodemon": "^2.0.6",
+        "npm": "^5.10.0",
         "passport": "^0.4.0",
         "passport-local": "^1.0.0",
         "sequelize": "^5.22.3"
