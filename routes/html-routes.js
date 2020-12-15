@@ -10,10 +10,6 @@ const isAuthenticated = require('../config/middleware/isAuthenticated')
 // Routes
 // =============================================================
 module.exports = function (app) {
-<<<<<<< HEAD
-  app.get('/signup', (req, res) => {
-    // If the user already has an account send them to the cms page
-=======
   // app.get('/signup', (req, res) => {
   //     // If the user already has an account send them to the members page
   //     if (req.user) {
@@ -64,45 +60,19 @@ module.exports = function (app) {
     res.render('welcome')
   })
   app.get('/login', (req, res) => {
->>>>>>> main
     if (req.user) {
       res.redirect('/cms')
     }
     res.render('login')
   })
-<<<<<<< HEAD
-
-  app.get('/login', (req, res) => {
-    // If the user already has an account send them to the cms page
-=======
   app.get('/signup', (req, res) => {
->>>>>>> main
     if (req.user) {
       res.redirect('/cms')
     }
     res.render('signup')
   })
-<<<<<<< HEAD
-
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get('/cms', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/cms.html'))
-  })
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-
-  // index route loads view.html
-  // app.get("/journal", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/journal.html"));
-  // });
-
-  // cms route loads cms.html
-  app.get('/cms', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/cms.html'))
-=======
   app.get('/members', isAuthenticated, (req, res) => {
     res.render('members')
->>>>>>> main
   })
   app.get('/cms', (req, res) => {
     res.render('cms')
