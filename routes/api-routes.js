@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require('../models')
 const passport = require('../config/passport')
+// const Post = require('../models/traveler.js')
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -11,6 +12,25 @@ module.exports = function (app) {
     res.json({
       email: req.user.email,
       id: req.user.id
+    })
+  })
+  app.get('/api/posts/:traveler', function (req, res) {
+    db.Post.findAll({
+      where: {
+        name: req.params.traveler
+      }
+    }).then(function (results) {
+      res.json(results)
+    })
+  })
+  app.get('/api/posts/:traveler', function (req, res) {
+    db.Post.findOne({
+      where: {
+        name: req.params.traveler
+      }
+    }).then(function (results) {
+      console.log(results)
+      res.json(results)
     })
   })
 

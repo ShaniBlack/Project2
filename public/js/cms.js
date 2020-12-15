@@ -9,14 +9,16 @@ $(document).ready(function () {
   let imageUrl = ''
   const cmsForm = $('#cms')
   const travelerSelect = $('#traveler')
-  // Adding an event listener for when the form is submitted traveler author
+  // Adding an event listener for when the form is submitted traveler author updating
   $(cmsForm).on('submit', handleFormSubmit)
+
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   const url = window.location.search
   let postId
   let travelerId
   // Sets a flag for whether or not we're updating a post to be false initially
   let updating = false
+  let journaling = false
 
   const fileInput = document.querySelector('#fileUpload input[type=file]')
 
@@ -92,6 +94,11 @@ $(document).ready(function () {
       window.location.href = '/blog'
     })
   }
+  function journalEntry (post) {
+    $.post('/api/posts', post, function () {
+      window.location.href = '/members'
+    })
+  }
 
   //* *******// function uploadImage (data) {
   //   $.post('/api/upload', data, function () {
@@ -125,6 +132,21 @@ $(document).ready(function () {
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true
+      }
+    })
+    $.get(queryUrl, function (data) {
+      if (data) {
+        console.log(data.TravelerId || data.id)
+        // If this post exists, prefill our cms forms with its data
+        titleInput.val(data.title)
+        cityInput.val(data.city)
+        lodgingInput.val(data.lodging)
+        ratingsInput.val(data.ratings)
+        bodyInput.val(data.body)
+        travelerId = data.TravelerId || data.id
+        // If we have a post with this id, set a flag for us to know to update the post
+        // when we hit submit
+        journaling = true
       }
     })
   }
@@ -168,5 +190,49 @@ $(document).ready(function () {
       .then(function () {
         window.location.href = '/blog'
       })
+  }
+
+  $(cmsForm).on('journal', handleFormJournal)
+  function handleFormJournal (event) {
+    event.preventDefault()
+    // Wont submit the post if we are missing a body, title, or traveler
+    if (!titleInput.val().trim() || !bodyInput.val().trim() || !travelerSelect.val()) {
+      return
+    }
+    // Constructing a newPost object to hand to the database
+    const newPost = {
+      title: titleInput
+        .val()
+        .trim(),
+      city: cityInput
+        .val()
+        .trim(),
+      lodging: lodgingInput
+        .val()
+        .trim(),
+      ratings: ratingsInput
+        .val()
+        .trim(),
+      body: bodyInput
+        .val()
+        .trim(),
+      TravelerId: travelerSelect.val()
+    }
+    if (journaling) {
+      newPost.id = postId
+      journalPost(newPost)
+    } else {
+      journalEntry(newPost)
+    }
+    function journalPost (post) {
+      $.ajax({
+        method: 'PUT',
+        url: '/api/posts',
+        data: post
+      })
+        .then(function () {
+          window.location.href = '/members'
+        })
+    }
   }
 })

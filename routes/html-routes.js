@@ -61,13 +61,13 @@ module.exports = function (app) {
   })
   app.get('/login', (req, res) => {
     if (req.user) {
-      res.redirect('/members')
+      res.redirect('/cms')
     }
     res.render('login')
   })
   app.get('/signup', (req, res) => {
     if (req.user) {
-      res.redirect('/members')
+      res.redirect('/cms')
     }
     res.render('signup')
   })
