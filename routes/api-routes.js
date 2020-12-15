@@ -8,9 +8,10 @@ module.exports = function(app) {
     // Otherwise the traveler will be sent an error
     app.post('/api/login', passport.authenticate('local'), (req, res) => {
         // Sending back a password, even a hashed password, isn't a good idea
+        console.log(req.user.email)
         res.json({
-            email: req.traveler.email,
-            id: req.traveler.id
+            email: req.user.email,
+            id: req.user.id
         })
     })
 
@@ -65,16 +66,16 @@ module.exports = function(app) {
 
     // Route for getting some data about our traveler to be used client side
     app.get('/api/traveler_data', (req, res) => {
-        if (!req.traveler) {
-            // The traveler is not logged in, send back an empty object
+        if (!req.user) {
+            // The user is not logged in, send back an empty object
             res.json({})
         } else {
-            // Otherwise send back the traveler's email and id
+            // Otherwise send back the user's email and id
             // Sending back a password, even a hashed password, isn't a good idea
             res.json({
-                name: req.traveler.name,
-                email: req.traveler.email,
-                id: req.traveler.id
+                name: req.user.name,
+                email: req.user.email,
+                id: req.user.id
             })
         }
     })
