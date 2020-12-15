@@ -1,6 +1,7 @@
 $(document).ready(function () {
   // blogContainer holds all of our posts Traveler
   const blogContainer = $('.blog-container')
+  $(document).on("click", "button.save", handlePostSave);
   // const postCategorySelect = $('#category')
   // Variable to hold our posts
   let posts
@@ -69,8 +70,11 @@ $(document).ready(function () {
     const journalBtn = $('<button>')
     journalBtn.text('journal')
     journalBtn.addClass('journal btn btn-info')
-    newPostCardFooting.addClass('blog-footer has-text-black')
     newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Rating:  ${post.ratings}  `)
+    newPostCardFooting.addClass('blog-footer has-text-black')
+
+    const saveBtn = $('<button>');
+    saveBtn.addClass('save btn btn-link').text('save')
 
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
@@ -84,13 +88,26 @@ $(document).ready(function () {
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)
-    newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
+    newPostCardHeading.append(saveBtn);
+
+    newPostCardFooting.append(`<div><a href='/blog?traverler_id=${post.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
+    // newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
     newPostCard.append(newPostCardFooting)
     newPostCard.data('post', post)
 
+    
+
     return newPostCard
+  }
+
+  function handlePostSave() {
+    var currentPost = $(this)
+      .parent()
+      .parent()
+      .data("post");
+    window.location.href = "/members?post_id=" + currentPost.id;
   }
   // This function displays a message when there are no posts author
   function displayEmpty (id) {

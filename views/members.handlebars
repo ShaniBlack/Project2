@@ -14,14 +14,14 @@
        href="./members">
       home
     </a>
-    <a class="navbar-item has-text-black"
+    {{!-- <a class="navbar-item has-text-black"
        id="nav-ubuntu"
        href="./cms">
       My Travel Journal
-    </a>
+    </a> --}}
     <a class="navbar-item has-text-black"
        id="nav-ubuntu"
-       href="./travelers">
+       href="./blog">
       Travelers' Reviews
     </a>
     <a class="navbar-item has-text-black"
@@ -38,10 +38,10 @@
 </div>
 
 <div class="container">
-  <div class="columns">
-    <div class="column is-6 is-offset-one-quarter has-text-black welcome-book">
-      <h2>
-        So glad you're back!
+  <div class="columns is-centered">
+    <div class="column is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+      <h2 class="member-welcome">
+        so glad you're back!
         <span class="member-name"></span>
       </h2>
     </div>
@@ -50,31 +50,59 @@
 
 <section class="section cards">
   <div class="container">
-    <div class="columns">
-    <div class="column is-quarter has-text-black login-welcome">
-      <h2>
-        Write a review
-      </h2>
-    </div>
+    <div class="columns is-centered">
+      <div class="column is-quarter has-text-black">
+        <h2 class="member-page">
+          Write a review
+        </h2>
+      </div>
 
-    <div class="column is-quarter has-text-black login-welcome">
-      <h2>
-        Your past reviews
-      </h2>
+      <div class="column is-quarter has-text-black">
+        <h2 class="member-page">
+          Your past reviews
+        </h2>
+      </div>
     </div>
-  </div>
   </div>
 </section>
 
 {{!-- <div class="row pull-right"> --}}
 
-<div class="container">
-  <div class="columns">
-    <div class="column is-half is-offset-one-quarter has-text-black login-welcome">
-      Your photos!
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half is-offset-one-quarter has-text-black member-welcome">
+        Your photos!
+      </div>
+    </div>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-3 is-fullhd is-3-desktop is-6-tablet is-12-mobile">
+        <figure class="image">
+          <img
+               src="https://images.unsplash.com/photo-1547619292-b592f993106f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80">
+        </figure>
+      </div>
+      <div class="column is-3 is-fullhd is-3-desktop is-6-tablet is-12-mobile">
+        <figure class="image">
+          <img
+               src="https://images.unsplash.com/photo-1585747476687-9fe23ff2ec6a?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8RnpvM3p1T0hONnd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+        </figure>
+      </div>
+      <div class="column is-3 is-fullhd is-3-desktop is-6-tablet is-12-mobile">
+        <figure class="image">
+          <img
+               src="https://images.unsplash.com/photo-1607375935061-952db3cd8955?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+        </figure>
+      </div>
+      <div class="column is-3 is-fullhd is-3-desktop is-6-tablet is-12-mobile">
+        <figure class="image">
+          <img
+               src="https://images.unsplash.com/photo-1607707268918-8187fda5d472?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfEZ6bzN6dU9ITjZ3fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+        </figure>
+      </div>
     </div>
   </div>
-</div>
+</section>
 <script async
         type="text/javascript"
         src="/js/bulma.js"></script>
