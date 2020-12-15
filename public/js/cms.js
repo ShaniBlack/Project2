@@ -87,7 +87,7 @@ $(document).ready(function() {
         }
     }
 
-    // Submits a new post and brings user to blog page upon completion
+    // Submits a new post and brings traveler to blog page upon completion
     function submitPost(post) {
         $.post('/api/posts', post, function() {
             // window.location.href = '/blog'
@@ -135,7 +135,7 @@ $(document).ready(function() {
     function getTravelers() {
         $.get('/api/travelers', renderTravelerList)
     }
-    // Function to either render a list of authors, or if there are none, direct the user to the page
+    // Function to either render a list of authors, or if there are none, direct the traveler to the page
     // to create an author first
     function renderTravelerList(data) {
         if (!data.length) {
@@ -160,7 +160,7 @@ $(document).ready(function() {
         return listOption
     }
 
-    // Update a given post, bring user to the blog page when done
+    // Update a given post, bring traveler to the blog page when done
     function updatePost(post) {
         $.ajax({
                 method: 'PUT',

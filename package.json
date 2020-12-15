@@ -1,5 +1,8 @@
-{
+{"name": "project_2",
     "version": "1.0.0",
+    "engines": {
+        "node": "15.x"
+    },
     "test": "npm run lint",
     "start": "node server.js",
     "lint": "eslint .",

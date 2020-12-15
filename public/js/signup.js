@@ -10,17 +10,17 @@ $(document).ready(() => {
     signUpForm.on('submit', event => {
         console.log('test')
         event.preventDefault()
-        const userData = {
+        const travelerData = {
             name: name.val().trim(),
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
         }
 
-        if (!userData.email || !userData.password) {
+        if (!travelerData.email || !travelerData.password) {
             return
         }
-        // If we have an email and password, run the signUpUser function
-        signUpUser(userData.name, userData.email, userData.password)
+        // If we have an email and password, run the signUpTraveler function
+        signUpTraveler(travelerData.name, travelerData.email, travelerData.password)
         name.val('')
         emailInput.val('')
         passwordInput.val('')
@@ -28,7 +28,7 @@ $(document).ready(() => {
 
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function signUpUser(name, email, password) {
+    function signUpTraveler(name, email, password) {
         $.post('/api/signup', {
                 name: name,
                 email: email,

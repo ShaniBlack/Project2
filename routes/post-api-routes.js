@@ -56,11 +56,12 @@ module.exports = function(app) {
             console.log(fields)
             console.log('fields:' + fields.imgTitle)
             console.log(JSON.stringify(files.filetoupload, null, '\t'))
-            console.log(req.user.id)
+            console.log(req.traveler.id)
 
             db.Post.create({
                 title: fields.title,
-                userId: req.user.id,
+                travelerId: req.traveler.id,
+
             })
             const oldpath = files.filetoupload.path
             const newpath = 'public/assets/file_uploads/' + files.filetoupload.name
