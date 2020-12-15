@@ -16,7 +16,7 @@ $(document).ready(function () {
     getPosts()
   }
 
-  // This function grabs posts from the database and updates the view
+  // This function grabs posts from the database and updates the view upDate
   function getPosts (traveler) {
     travelerId = traveler || ''
     if (travelerId) {
@@ -72,6 +72,9 @@ $(document).ready(function () {
       color: 'blue',
       'margin-top': '-10px'
     })
+    const journalBtn = $('<button>')
+    journalBtn.text('journal')
+    journalBtn.addClass('journal btn btn-info')
 
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
@@ -82,6 +85,7 @@ $(document).ready(function () {
     // newPostTitle.append(newPostDate)
     // newPostCardHeading.append(deleteBtn)
     // newPostCardHeading.append(editBtn)
+    newPostCardHeading.append(journalBtn)
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
     newPostCardBody.append(newPostBody)

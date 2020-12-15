@@ -23,6 +23,16 @@ module.exports = function (app) {
       res.json(results)
     })
   })
+  app.get('/api/posts/:traveler', function (req, res) {
+    db.Post.findOne({
+      where: {
+        name: req.params.traveler
+      }
+    }).then(function (results) {
+      console.log(results)
+      res.json(results)
+    })
+  })
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
