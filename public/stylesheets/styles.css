@@ -27,11 +27,13 @@ html {
 .login-welcome {
   font-family: "Ubuntu", sans-serif;
   font-size: 40px;
+  padding-top: 0;
 }
 
 #login-little {
   font-family: "Sofia", sans-serif;
   font-size: 50px;
+  margin-bottom: 0%;
 }
 
 #small-login {
@@ -44,3 +46,38 @@ html {
   margin: 10px;
 }
 
+#nav-home {
+  font-family: "Sofia";
+  font-size: 25px;
+}
+
+#nav-ubuntu {
+  font-family: "Ubuntu";
+  font-size: 20px;
+}
+
+.title {
+  font-family: "Sofia";
+}
+
+.table-striped
+#traveler-name {
+  font-family: "Ubuntu";
+}
+
+#create-traveler {
+  font-family: "Sofia";
+  font-weight: bold;
+}
+
+.blog-header {
+  float: left;
+  color: black;
+  font-family: "Ubuntu";
+}
+
+.blog-footer {
+  float: right;
+  color: black;
+  font-family: "Sofia";
+}

@@ -22,32 +22,24 @@
     <div class="navbar-menu">
         <div class="navbar-end">
             <a class="navbar-item is-family-sans-serif" id="nav-home" href="./members">
-				Home
-			</a>
+                Home
+            </a>
             <a class="navbar-item nav-journal" href="./cms">
-				My Travel Journal
-			</a>
+                My Travel Journal
+            </a>
             <a class="navbar-item nav-reviews" href="./travelers">
-				Travelers' Reviews
-			</a>
+                Travelers' Reviews
+            </a>
             <a class="navbar-item nav-write" href="./cms">
 				Write Travel Review
 			</a>
+			<a class="navbar-item nav-logout" href="./logout">
+                Logout
+            </a>
+
         </div>
     </div>
-    </nav>
-    </div>
-    </section>
 
-    <!-- <div class="container">
-		<div class="row top-30">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/blog">Travel Post</a>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/travelers">Fellow Travelers</a>
-      </div>
-    </div> -->
     <div class="columns">
         <div class="column is-offset-3 is-one-third">
             <form id="cms">
@@ -58,19 +50,16 @@
                             <input class="input is-rounded" id="title" placeholder="Country" type="text">
                         </div>
 
-                        <!-- <br /> -->
                         <div class="control">
                             <label class="city">City:</label>
                             <input class="input is-rounded" id="city" placeholder="City" type="text">
                         </div>
 
-                        <!-- <br /> -->
                         <div class="control">
                             <label class="lodging">Lodging:</label>
                             <input class="input is-rounded" id="lodging" placeholder="Lodging" type="text">
                         </div>
 
-                        <!-- <br /> -->
                         <div class="control">
                             <label class="ratings">Ratings:</label>
                             <input class="input is-rounded" id="ratings" placeholder="Foods or Places you Enjoyed Most" type="text">
@@ -87,26 +76,84 @@
                             <textarea class="textarea is-rounded is-half" placeholder="Journal" rows="10" id="body"></textarea>
                         </div>
 
-                        <label class="category">Select Traveler: </label>
+                        <!-- <label class="category">Select Traveler: </label>
                         <div class="control has-icons-right">
                             <div class="dropdown is-active">
                                 <div class="dropdown-trigger">
                                     <select class="input is-rounded" id="traveler">
-										<span class="icon is-small is-right">
-											<i class="fas fa-angle-down" aria-hidden="true"></i>
-										</span>
-									</select>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <br />
                     </div>
                     <button class="button is-success is-rounded" type="submit">Submit</button>
                     <button class="button is-success is-rounded" type="journal">Journal</button>
                 </div>
+            </form>
+            <br>
+            <form action="/api/upload" enctype="multipart/form-data" method="post">
+                <div class="field">
+                    <label class="label">Upload an Image</label>
+
+                    <!-- <div class="control">
+                                        <input type="file" name="someExpressFiles" multiple="multiple" />
+                                        <p class="help is-success">This username is available</p>
+                                        <input type="submit" value="Upload" />
+                                    </div> -->
+                    <div class="file">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="filetoupload" multiple="multiple">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Choose a file…
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Title for Your Image" name="title">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-image"></i>
+                        </span>
+                        <!-- <span class="icon is-small is-right">
+                                            <i class="fas fa-check"></i>
+                                        </span> -->
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <p class="control">
+                        <a type="submit" class="button is-primary" value="Upload">
+                            Upload
+                        </a>
+                    </p>
+                    <p class="control">
+                        <a class="button is-light" value="Cancel">
+                            Cancel
+                        </a>
+                    </p>
+                </div>
+            </form>
         </div>
-        </form>
+
+        <br />
+        <!-- /////////////////upload image files\\\\\\\\\\\\\\\\\\\ -->
+        <!-- /////////////////upload image files\\\\\\\\\\\\\\\\\\\ -->
+
+        <!-- <form action="/api/upload" enctype="multipart/form-data" method="post"> -->
+        <!-- <div>Text field title: <input type="text" name="title" /></div> -->
+        <!-- <div>File: <input type="file" name="someExpressFiles" multiple="multiple" /></div> -->
+        <!-- <input type="submit" value="Upload" /> -->
+
+    </div>
+    </form>
     </div>
     </div>
 

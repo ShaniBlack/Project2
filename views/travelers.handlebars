@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="button navbar-burger burger"
+       data-target="navbar-menu"
+       aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </div>
+</div>
+<div class="navbar-menu">
+  <div class="navbar-end">
+    <a class="navbar-item has-text-black"
+       id="nav-home"
+       href="./members">
+      home
+    </a>
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./cms">
+      My Travel Journal
+    </a>
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./travelers">
+      Travelers' Reviews
+    </a>
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./cms">
+      Write Travel Review
+    </a>
+    <a class="navbar-item has-text-black"
+       id="nav-ubuntu"
+       href="./logout">
+      Logout
+    </a>
+
+  </div>
+</div>
+	<div class="container traveler-container is-rounded">
+		<div class="columns">
+			<div class="column is-8 is-offset-2">
+					<h1 class="title">travelers</h1>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th># of Posts</th>
+								<th>See Traveler's Posts</th>
+								<th>New Post</th>
+								<th>Create Traveler</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="form-row">
+								<form id="traveler-form">
+									<td colspan="4">
+										<input placeholder="Enter a name"
+											   id="traveler-name"
+											   type="text" />
+									</td>
+									<td><button type="submit"
+												class="btn is-success is-rounded has-text-black" id="create-traveler">create traveler</button>
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+<script async
+        type="text/javascript"
+        src="/js/bulma.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script async
+        type="text/javascript"
+        src="/js/blog.js"></script>
