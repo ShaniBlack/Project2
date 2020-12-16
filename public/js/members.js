@@ -18,25 +18,26 @@ $(document).ready(() => {
   // The code below handles the case where we want to get blog posts for a specific author
   // Looks for a query param in the url for author_id
   const url = window.location.search
-  let travelerId
+  let name
   if (url.indexOf('?traveler_id=') !== -1) {
-    travelerId = url.split('=')[1]
-    getPosts(travelerId)
+    name = url.split('=')[1]
+    getPosts(name)
   } else {
+    console.log()
     getPosts()
   }
 
   // This function grabs posts from the database and updates the view
-  function getPosts (traveler) {
-    travelerId = traveler || ''
-    if (travelerId) {
-      travelerId = '/?traveler_id=' + travelerId
+  function getPosts (name) {
+    name = name || ''
+    if (name) {
+      name = '/?traveler_id=' + name
     }
-    $.get('/api/posts' + travelerId, function (data) {
+    $.get('/api/posts' + name, function (data) {
       console.log('Posts', data)
       posts = data
       if (!posts || !posts.length) {
-        displayEmpty(traveler)
+        displayEmpty(name)
       } else {
         initializeRows()
       }

@@ -65,15 +65,15 @@ $(document).ready(function () {
     newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Rating:  ${post.ratings}  `)
     newPostCardFooting.addClass('blog-footer has-text-black')
 
-    const saveBtn = $('<button>')
-    saveBtn.addClass('save btn btn-link').text('save')
+    // const saveBtn = $('<button>')
+    // saveBtn.addClass('save btn btn-link').text('save')
 
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
     newPostBody.text(post.body)
     // const newPostImg = $(`<img src="${post.imageURL}" alt="" srcset="">`)
-    newPostCardHeading.append(saveBtn)
+    // newPostCardHeading.append(saveBtn)
 
     newPostCardHeading.append(newPostTitle)
     newPostCardHeading.append(newPostTraveler)
@@ -81,7 +81,7 @@ $(document).ready(function () {
     newPostCardBody.append(newPostBody)
     // newPostCardHeading.append(saveBtn)
 
-    newPostCardFooting.append(`<div><a href='/blog?traverler_id=${post.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
+    newPostCardFooting.append(`<div><a href='/blog?traverler_id=${post.Traveler.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
     // newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
@@ -91,21 +91,25 @@ $(document).ready(function () {
     return newPostCard
   }
 
-  function handlePostSave () {
-    const currentPost = $(this)
-      .parent()
-      .parent()
-      .data('post')
-    window.location.href = '/blog?post_id=' + currentPost.id
-  }
+  // function handlePostSave () {
+  //   const currentPost = $(this)
+  //     .parent()
+  //     .parent()
+  //     .data('post')
+  //   window.location.href = '/blog?post_id=' + currentPost.id
+  // }
   // This function displays a message when there are no posts author
   function displayEmpty (id) {
-    // eslint-disable-next-line no-unused-vars
     const query = window.location.search
     let partial = ''
     if (id) {
-      // eslint-disable-next-line no-unused-vars
-      partial = ' for Traveler #' + id
+      partial = ' for Author #' + id
     }
+    blogContainer.empty()
+    const messageH2 = $('<h2>')
+    messageH2.css({ 'text-align': 'center', 'margin-top': '50px' })
+    messageH2.html('No posts yet' + partial + ", navigate <a href='/cms" + query +
+    "'>here</a> in order to get started.")
+    blogContainer.append(messageH2)
   }
 })

@@ -5,27 +5,6 @@ $(document).ready(function () {
     $('#travelerId').val(data.id)
     $('#travelerName').val(data.name)
   })
-  // Getting jQuery references to the post body, title, form, and traveler select
-  // const bodyInput = $('#body')
-  // const titleInput = $('#title')
-  // const cityInput = $('#city')
-  // const lodgingInput = $('#lodging')
-  // const ratingsInput = $('#ratings')
-  // const imageName = ''
-  // const imageUrl = ''
-  // const cmsForm = $('#cms')
-  // const travelerSelect = $('#traveler')
-  // Adding an event listener for when the form is submitted traveler author updating
-  // $(cmsForm).on('submit', handleFormSubmit)
-
-  // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
-  // const url = window.location.search
-  // let postId
-  // let travelerId
-  // Sets a flag for whether or not we're updating a post to be false initially
-  // const updating = false
-  // const journaling = false
-
   const fileInput = document.querySelector('#fileUpload input[type=file]')
 
   fileInput.onchange = () => {
@@ -37,6 +16,38 @@ $(document).ready(function () {
     }
   }
 })
+// Getting jQuery references to the post body, title, form, and traveler select
+// const bodyInput = $('#body')
+// const titleInput = $('#title')
+// const cityInput = $('#city')
+// const lodgingInput = $('#lodging')
+// const ratingsInput = $('#ratings')
+// const imageName = ''
+// const imageUrl = ''
+// const cmsForm = $('#cms')
+// const travelerSelect = $('#traveler')
+// Adding an event listener for when the form is submitted traveler author updating
+// $(cmsForm).on('submit', handleFormSubmit)
+
+// Gets the part of the url that comes after the "?" (which we have if we're updating a post)
+// const url = window.location.search
+// let postId
+// let travelerId
+// Sets a flag for whether or not we're updating a post to be false initially
+// const updating = false
+// const journaling = false
+
+//   const fileInput = document.querySelector('#fileUpload input[type=file]')
+
+//   fileInput.onchange = () => {
+//     if (fileInput.files.length > 0) {
+//       const fileName = document.querySelector('#fileUpload .file-name')
+//       fileName.textContent = fileInput.files[0].name
+//       // imageName = fileName.textContent
+//       // imagePath = 'assets/file_uploads/' + imageName
+//     }
+//   }
+// })
 
 // function uploadImage (data) {
 //   $.post('/api/upload', data, function () {
