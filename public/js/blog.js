@@ -23,6 +23,7 @@ $(document).ready(function () {
     if (travelerId) {
       travelerId = '/?traveler_id=' + travelerId
     }
+    // /api/posts/:traveler_id
     $.get('/api/posts' + travelerId, function (data) {
       console.log('Posts', data)
       posts = data
@@ -81,7 +82,7 @@ $(document).ready(function () {
     newPostCardBody.append(newPostBody)
     // newPostCardHeading.append(saveBtn)
 
-    newPostCardFooting.append(`<div><a href='/blog?traverler_id=${post.Traveler.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
+    newPostCardFooting.append(`<div><a href='/blog?traveler_id=${post.Traveler.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
     // newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)
