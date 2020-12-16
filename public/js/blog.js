@@ -55,23 +55,17 @@ $(document).ready(function () {
     newPostCard.css({
       margin: '10px'
     })
+    const newPostTitle = $('<h4 class="post-title has-text-weight-bold is-size-5 is-centered">')
     const newPostCardHeading = $('<div>')
     newPostCardHeading.addClass('blog-header has-text-black')
-    const newPostTitle = $('<h4 class="has-text-weight-bold is-size-5">')
     const newPostTraveler = $('<h6 class="has-text-weight-semibold is-size-6">')
     const newPostCardFooting = $('<div>')
-    // newPostCardFooting.addClass('card-Footer')
-    // newPostTraveler.text(` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
-    // newPostTraveler.css({
-    //   float: 'right',
-    //   color: 'blue',
-    //   'margin-top': '-10px'
-    // })
+
     const journalBtn = $('<button>')
     journalBtn.text('journal')
     journalBtn.addClass('journal btn btn-info')
     newPostTitle.text(`${post.title}`)
-    newPostTraveler.text(`Country:  ${post.title}  City:  ${post.city} Trip Rating:  ${post.ratings}`)
+    newPostTraveler.text(`Country:  ${post.country}  City:  ${post.city} Trip Rating:  ${post.ratings}`)
     newPostCardFooting.addClass('blog-footer has-text-black')
 
     // const saveBtn = $('<button>')
@@ -92,7 +86,6 @@ $(document).ready(function () {
     // newPostCardHeading.append(editBtn)
     // newPostCardHeading.append(journalBtn)
     newPostCardHeading.append(newPostTitle)
-
     newPostCardHeading.append(newPostTraveler)
     newPostCard.append(newPostImg)
     newPostCardBody.append(newLine)
