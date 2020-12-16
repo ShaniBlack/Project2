@@ -60,7 +60,14 @@ module.exports = function (app) {
 
       const oldpath = files.filetoupload.path
       const newpath = 'public/assets/file_uploads/' + files.filetoupload.name
-      console.log(newpath)
+      // console.log(newpath)
+      // let path = new String(newpath)
+      // console.log(path)
+      const path = 'assets/file_uploads/'
+      const imagePath = path + files.filetoupload.name
+      console.log('imagePath = ', imagePath)
+      console.log('imgTitle = ', fields.imgTitle)
+      console.log('lodging = ', fields.lodging)
 
       db.Post.create({
         title: fields.postTitle,
@@ -71,7 +78,7 @@ module.exports = function (app) {
         activities: fields.activities,
         body: fields.body,
         imgTitle: fields.imgTitle,
-        imageUrl: newpath,
+        imageURL: imagePath,
         TravelerId: req.user.id
       })
 

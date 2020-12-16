@@ -31,8 +31,8 @@ module.exports = function (app) {
   app.post('/members', isAuthenticated, (req, res) => {
     res.render('members')
   })
-  app.get('/cms', (req, res) => {
-    res.render('cms')
+  app.get('/review', (req, res) => {
+    res.render('review')
   })
   app.get('/blog', (req, res) => {
     res.render('blog')

@@ -27,7 +27,7 @@ $(document).ready(function () {
       console.log('Posts', data)
       posts = data
       if (!posts || !posts.length) {
-        displayEmpty(traveler)
+        //* **DONTDELETE ***/ displayEmpty(traveler)
       } else {
         initializeRows()
       }
@@ -39,7 +39,7 @@ $(document).ready(function () {
     blogContainer.empty()
     const postsToAdd = []
     for (let i = 0; i < posts.length; i++) {
-      if (postsToAdd.length < 5) {
+      if (postsToAdd.length < 100) {
         postsToAdd.push(createNewRow(posts[i]))
       }
     }
@@ -57,8 +57,8 @@ $(document).ready(function () {
     })
     const newPostCardHeading = $('<div>')
     newPostCardHeading.addClass('blog-header has-text-black')
-    const newPostTitle = $('<h5>')
-    const newPostTraveler = $('<h6>')
+    const newPostTitle = $('<h4 class="has-text-weight-bold is-size-5">')
+    const newPostTraveler = $('<h6 class="has-text-weight-semibold is-size-6">')
     const newPostCardFooting = $('<div>')
     // newPostCardFooting.addClass('card-Footer')
     // newPostTraveler.text(` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
@@ -70,16 +70,20 @@ $(document).ready(function () {
     const journalBtn = $('<button>')
     journalBtn.text('journal')
     journalBtn.addClass('journal btn btn-info')
-    newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Rating:  ${post.ratings}  `)
+    newPostTitle.text(`${post.title}`)
+    newPostTraveler.text(`Country:  ${post.title}  City:  ${post.city} Trip Rating:  ${post.ratings}`)
     newPostCardFooting.addClass('blog-footer has-text-black')
 
-    const saveBtn = $('<button>')
-    saveBtn.addClass('save btn btn-link').text('save')
+    // const saveBtn = $('<button>')
+    // saveBtn.addClass('save btn btn-link').text('save')
 
     const newPostCardBody = $('<div>')
     newPostCardBody.addClass('card-content')
     const newPostBody = $('<p>')
-    newPostBody.text(post.body)
+    const newLine = $('<br>')
+    const newLine2 = $('<br>')
+    // const newLine3 = $('<br>')
+    newPostBody.text(`${post.body}`)
     const newPostImg = $(`<img src="${post.imageURL}" alt="" srcset="">`)
 
     // newPostDate.text(formattedDate)
@@ -88,10 +92,14 @@ $(document).ready(function () {
     // newPostCardHeading.append(editBtn)
     // newPostCardHeading.append(journalBtn)
     newPostCardHeading.append(newPostTitle)
+
     newPostCardHeading.append(newPostTraveler)
     newPostCard.append(newPostImg)
+    newPostCardBody.append(newLine)
+    newPostCardBody.append(newLine2)
+
     newPostCardBody.append(newPostBody)
-    newPostCardHeading.append(saveBtn)
+    // newPostCardHeading.append(saveBtn)
 
     newPostCardFooting.append(`<div><a href='/blog?traverler_id=${post.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
     // newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
@@ -110,12 +118,12 @@ $(document).ready(function () {
       .data('post')
     window.location.href = '/members?post_id=' + currentPost.id
   }
-  // This function displays a message when there are no posts author
-  function displayEmpty (id) {
-    const query = window.location.search
-    let partial = ''
-    if (id) {
-      partial = ' for Traveler #' + id
-    }
-  }
+  // //***DONTDELETE ***/This function displays a message when there are no posts author
+  // function displayEmpty (id) {
+  //   const query = window.location.search
+  //   let partial = ''
+  //   if (id) {
+  //     partial = ' for Traveler #' + id
+  //   }
+  // }
 })

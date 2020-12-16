@@ -54,7 +54,7 @@ $(document).ready(function () {
     // }
     // newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
     newTr.append("<td><a href='/blog?traveler_id=" + travelerData.id + "'>Go to Posts</a></td>")
-    newTr.append("<td><a href='/cms?traveler_id=" + travelerData.id + "'>Create a Post</a></td>")
+    newTr.append("<td><a href='/review?traveler_id=" + travelerData.id + "'>Create a Post</a></td>")
     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-traveler'>Delete traveler</a></td>")
     return newTr
   }
