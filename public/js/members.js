@@ -136,7 +136,7 @@ $(document).ready(() => {
             .parent()
             .parent()
             .data('post')
-        window.location.href = '/cms?post_id=' + currentPost.id
+        window.location.href = '/review?post_id=' + currentPost.id
     }
 
     // This function displays a message when there are no posts author
@@ -152,7 +152,7 @@ $(document).ready(() => {
             'text-align': 'center',
             'margin-top': '50px'
         })
-        messageH2.html("What are you waiting for, start telling everyone about your travels in  <a href='/cms" + query +
+        messageH2.html("What are you waiting for, start telling everyone about your travels in  <a href='/review" + query +
             "'>your littleTravelBook</a>.")
         blogContainer.append(messageH2)
     }
