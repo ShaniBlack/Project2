@@ -39,7 +39,7 @@ $(document).ready(function() {
         blogContainer.empty()
         const postsToAdd = []
         for (let i = 0; i < posts.length; i++) {
-            if (postsToAdd.length < 5) {
+            if (postsToAdd.length < 100) {
                 postsToAdd.push(createNewRow(posts[i]))
             }
         }
@@ -57,8 +57,8 @@ $(document).ready(function() {
         })
         const newPostCardHeading = $('<div>')
         newPostCardHeading.addClass('blog-header has-text-black')
-        const newPostTitle = $('<h5>')
-        const newPostTraveler = $('<h6>')
+        const newPostTitle = $('<h4 class="has-text-weight-bold">')
+        const newPostTraveler = $('<h6 class="has-text-weight-semibold">')
         const newPostCardFooting = $('<div>')
             // newPostCardFooting.addClass('card-Footer')
             // newPostTraveler.text(` City:  ${post.city}   ` + ` Rating:  ${post.ratings}  `)
@@ -70,7 +70,8 @@ $(document).ready(function() {
         const journalBtn = $('<button>')
         journalBtn.text('journal')
         journalBtn.addClass('journal btn btn-info')
-        newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Rating:  ${post.ratings}  `)
+        newPostTitle.text(`${post.title}`)
+        newPostTraveler.text(`Country:  ${post.title}   City:  ${post.city}   Trip Rating:  ${post.ratings}  `)
         newPostCardFooting.addClass('blog-footer has-text-black')
 
         // const saveBtn = $('<button>')
@@ -79,7 +80,9 @@ $(document).ready(function() {
         const newPostCardBody = $('<div>')
         newPostCardBody.addClass('card-content')
         const newPostBody = $('<p>')
-        newPostBody.text(post.body)
+        const newLine = $('<br>')
+        const newLine2 = $('<br>')
+        newPostBody.text(`${post.body}`)
         const newPostImg = $(`<img src="${post.imageURL}" alt="" srcset="">`)
 
         // newPostDate.text(formattedDate)
@@ -90,6 +93,9 @@ $(document).ready(function() {
         newPostCardHeading.append(newPostTitle)
         newPostCardHeading.append(newPostTraveler)
         newPostCard.append(newPostImg)
+        newPostCardBody.append(newLine)
+        newPostCardBody.append(newLine2)
+
         newPostCardBody.append(newPostBody)
             // newPostCardHeading.append(saveBtn)
 
