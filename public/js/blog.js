@@ -82,7 +82,7 @@ $(document).ready(function () {
     newPostCardBody.append(newPostBody)
     // newPostCardHeading.append(saveBtn)
 
-    newPostCardFooting.append(`<div><a href='/blog?traveler_id=${post.Traveler.id}'>Written by: ${post.Traveler.name} ${formattedDate}</a></div>`)
+    newPostCardFooting.append(`<div><a href='/blog?traveler_id=${post.Traveler.id}''Written by: '>${post.Traveler.name} </a> ${formattedDate}</div>`)
     // newPostCardFooting.append(` Written by:  ${post.Traveler.name} ${formattedDate}`)
     newPostCard.append(newPostCardHeading)
     newPostCard.append(newPostCardBody)

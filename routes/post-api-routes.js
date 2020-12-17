@@ -40,6 +40,17 @@ module.exports = function (app) {
       res.json(dbPost)
     })
   })
+  app.get('/api/posts/:city', function (req, res) {
+    db.Post.findOne({
+      where: {
+        city: req.params.city
+      },
+      include: [db.Traveler]
+    }).then(function (dbPost) {
+      console.log(dbPost)
+      res.json(dbPost)
+    })
+  })
 
   // app.get('/api/posts/:id', function (req, res) {
   //   db.Post.findMany({
