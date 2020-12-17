@@ -67,7 +67,6 @@ html {
 }
 
 .blog-header {
-    float: left;
     color: black;
     font-family: "Ubuntu";
 }
@@ -81,3 +80,14 @@ html {
 .hidden {
     display: none;
 }
+
+.post-title {
+    font-family: "Ubuntu";
+    font-weight: bold;
+}
+
+.card-content {
+    font-family: "Ubuntu";
+}
+
+

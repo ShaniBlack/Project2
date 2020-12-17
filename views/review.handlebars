@@ -10,10 +10,10 @@
     <a class="navbar-item has-text-black" id="nav-home" href="./members">
       home
     </a>
-    <a class="navbar-item has-text-black" id="nav-ubuntu" href="./travelers">
+    <a class="navbar-item has-text-black" id="nav-ubuntu" href="./blog">
       Travelers' Reviews
     </a>
-    <a class="navbar-item has-text-black" id="nav-ubuntu" href="./cms">
+    <a class="navbar-item has-text-black" id="nav-ubuntu" href="./review">
       Write Travel Review
     </a>
     <a class="navbar-item has-text-black" id="nav-ubuntu" href="./logout">
@@ -24,7 +24,7 @@
 </div>
 <div class="columns">
   <div class="column is-offset-3 is-one-third">
-    <form id="cms" action="/api/upload" enctype="multipart/form-data" method="post">
+    <form id="review" action="/api/upload" enctype="multipart/form-data" method="post">
       <div class="form-class">
         <div class="field">
           <div class="control">
@@ -73,7 +73,7 @@
             <label class="ratings">
               Ratings:
             </label>
-            <input class="input is-rounded" name="ratings" id="ratings" placeholder="Foods or Places you Enjoyed Most"
+            <input class="input is-rounded" name="ratings" id="ratings" placeholder="Overall Trip Rating 1 - 10"
               type="text" />
           </div>
           <br />
@@ -122,7 +122,7 @@
           <input class="button is-success is-rounded" type="submit" value="Upload" />
         </div>
     </form>
-    <a href="/login">
+    {{!-- <a href="/login">
       <button class="button is-rounded is-success is-info is-medium is-half">
         Save to Journal
       </button>
@@ -133,8 +133,8 @@
       <button class="button is-rounded is-success is-info is-medium is-half">
         Post to Blog
       </button>
-    </a>
+    </a> --}}
   </div>
   <script async type="text/javascript" src="/js/bulma.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/cms.js"></script>
+  <script type="text/javascript" src="js/review.js"></script>

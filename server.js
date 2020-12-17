@@ -1,4 +1,6 @@
-const morgan = require('morgan') // Requiring necessary npm packages
+// Requiring necessary npm packages
+
+// const morgan = require('morgan')
 const express = require('express')
 const session = require('express-session')
 // Requiring passport as we've configured it
@@ -20,8 +22,7 @@ app.use(express.urlencoded({
 app.use(express.json())
 app.use(express.static('public'))
 
-// create "middleware"
-app.use(morgan('combined'))
+// app.use(morgan('combined'))
 
 /// /-----------HANDLEBARS---------//////////////////////////////////////////////////////////////
 // express-handlebars engine setup
