@@ -1,19 +1,19 @@
-$(document).ready(function () {
-  $.get('/api/user_data').then(data => {
-    console.log('user data', data.name)
-    console.log('user id', data.id)
-    $('#travelerId').val(data.id)
-    $('#travelerName').val(data.name)
-  })
+$(document).ready(function() {
+    $.get('/api/user_data').then(data => {
+        console.log('user data', data.name)
+        console.log('user id', data.id)
+        $('#travelerId').val(data.id)
+        $('#travelerName').val(data.name)
+    })
 
-  const fileInput = document.querySelector('#fileUpload input[type=file]')
+    const fileInput = document.querySelector('#fileUpload input[type=file]')
 
-  fileInput.onchange = () => {
-    if (fileInput.files.length > 0) {
-      const fileName = document.querySelector('#fileUpload .file-name')
-      fileName.textContent = fileInput.files[0].name
+    fileInput.onchange = () => {
+        if (fileInput.files.length > 0) {
+            const fileName = document.querySelector('#fileUpload .file-name')
+            fileName.textContent = fileInput.files[0].name
+        }
     }
-  }
 })
 
 // Getting jQuery references to the post body, title, form, and traveler select

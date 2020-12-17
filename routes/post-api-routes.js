@@ -40,6 +40,29 @@ module.exports = function (app) {
       res.json(dbPost)
     })
   })
+  app.get('/api/posts/:city', function (req, res) {
+    db.Post.findOne({
+      where: {
+        city: req.params.city
+      },
+      include: [db.Traveler]
+    }).then(function (dbPost) {
+      console.log(dbPost)
+      res.json(dbPost)
+    })
+  })
+
+  // app.get('/api/posts/:id', function (req, res) {
+  //   db.Post.findMany({
+  //     where: {
+  //       id: req.params.id
+  //     },
+  //     include: [db.Traveler]
+  //   }).then(function (dbPost) {
+  //     console.log(dbPost)
+  //     res.json(dbPost)
+  //   })
+  // })
 
   // POST route for saving a new post
   // app.post('/api/posts', function(req, res) {
@@ -92,7 +115,7 @@ module.exports = function (app) {
       console.log('Image uploaded and moved!')
       console.log('Post added to your Journal!')
       console.log('taking you to the blog!')
-      res.redirect('/blog')
+      res.respond('/blog')
     })
   })
 
