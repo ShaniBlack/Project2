@@ -2,19 +2,11 @@
 // const router = express.Router()
 
 // Import the models to use its database functions.
-// const index = require('../models/index.js')
-// const journal = require('../models/journal.js')
-// const location = require('../models/location.js')
-// const post = require('../models/post.js')
-// const traveler = require('../models/traveler.js')
-// const user = require('../models/user.js')
 
-// router.get('/', function(req, res) {
-//     res.render('main', {
-//         layout: '../login'
-//     });
-// });
-// Create all our routes and set up logic within those routes where required.
+// // const post = require('../models/post.js')
+// const traveler = require('../models/traveler.js')
+
+// // Create all our routes and set up logic within those routes where required.
 // router.get("/", function(req, res) {
 //     cat.all(function(data) {
 //         var hbsObject = {
