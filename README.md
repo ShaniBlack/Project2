@@ -3,9 +3,9 @@
 ## Description
     The little TravelBook is an app that allows users to sign in to their profile. They are able to write reviews about their trips and even share them with other users. 
 
-![Screenshot](./assets/Screenshots/loginSS.PNG)
-![Screenshot](./assets/Screenshots/writeReview.PNG)
-![Screenshot](./assets/Screenshots/reviewsWritten.PNG)
+![Screenshot](./Assets/Screenshots/loginSS.PNG)
+![Screenshot](./Assets/Screenshots/writeReview.PNG)
+![Screenshot](./Assets/Screenshots/reviewsWritten.PNG)
 
     Here are some of the technologies that were used to the create this program:
     JavaScript,CSS,node.js,jQuery,inquirer,path,MySQL,Handlebars
