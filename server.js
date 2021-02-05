@@ -6,6 +6,7 @@ const session = require('express-session')
     // Requiring passport as we've configured it
 const passport = require('./config/passport')
     // const path = require('path')
+const compression = require('compression')
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080
@@ -21,6 +22,7 @@ app.use(express.urlencoded({
 
 app.use(express.json())
 app.use(express.static('public'))
+app.use(compression())
 
 // app.use(morgan('combined'))
 

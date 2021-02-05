@@ -18,10 +18,13 @@
         "bcryptjs": "2.4.3",
         "bulma": "^0.9.1",
         "bulma-carousel": "^4.0.4",
+        "compression": "^1.7.4",
         "express": "^4.17.1",
         "express-handlebars": "^5.2.0",
         "express-session": "^1.16.1",
         "formidable": "^1.2.2",
+        "fs": "0.0.1-security",
+        "inquirer": "^7.3.3",
         "lint": "^0.7.0",
         "morgan": "^1.10.0",
         "mv": "^2.1.1",
@@ -29,6 +32,7 @@
         "nodemon": "^2.0.6",
         "passport": "^0.4.0",
         "passport-local": "^1.0.0",
+        "path": "^0.12.7",
         "sequelize": "^5.22.3"
     },
     "devDependencies": {
