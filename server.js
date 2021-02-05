@@ -22,6 +22,7 @@ app.use(express.urlencoded({
 
 app.use(express.json())
 app.use(express.static('public'))
+app.use(compression())
 
 app.use(compression())
     // app.use(morgan('combined'))
