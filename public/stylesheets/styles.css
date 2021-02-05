@@ -48,7 +48,7 @@ html {
     font-size: 25px;
 }
 
-#nav-ubuntu {
+.nav-ubuntu {
     font-family: "Ubuntu";
     font-size: 20px;
 }
@@ -89,5 +89,3 @@ html {
 .card-content {
     font-family: "Ubuntu";
 }
-
-

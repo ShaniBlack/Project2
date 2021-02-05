@@ -18,6 +18,7 @@
         "bcryptjs": "2.4.3",
         "bulma": "^0.9.1",
         "bulma-carousel": "^4.0.4",
+        "compression": "^1.7.4",
         "express": "^4.17.1",
         "express-handlebars": "^5.2.0",
         "express-session": "^1.16.1",
