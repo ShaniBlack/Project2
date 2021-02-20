@@ -24,7 +24,8 @@ app.use(express.json())
 app.use(express.static('public'))
 app.use(compression())
 
-// app.use(morgan('combined'))
+app.use(compression())
+    // app.use(morgan('combined'))
 
 /// /-----------HANDLEBARS---------//////////////////////////////////////////////////////////////
 // express-handlebars engine setup
